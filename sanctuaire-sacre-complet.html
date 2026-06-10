@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanctuaire Sacré — Chakras · Archanges · Isis</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Noto+Serif+Devanagari:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --t:.7s cubic-bezier(.4,0,.2,1);
+  --or:#C9A84C;--or2:#F0D080;--or3:#FFE99A;
+  --ivoire:#FFF8E7;--bleu-nuit:#050810;--sand:#D4A96A;
+  --isis-or:#C8A45A;--isis-bg:#06080E;--isis-accent:#8B6914;
+}
+body{background:var(--bleu-nuit);min-height:100vh;font-family:'Cormorant Garamond',serif;overflow-x:hidden;cursor:none;}
+.cursor{width:10px;height:10px;border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:background .3s,box-shadow .3s;}
+.cring{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.2);position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .12s ease-out,top .12s ease-out;}
+#bgc{position:fixed;inset:0;z-index:0;width:100%;height:100%;}
+#dov{position:fixed;inset:0;z-index:1;pointer-events:none;transition:background var(--t);}
+
+/* ========= TABS ========= */
+#tab-bar{
+  position:relative;z-index:50;
+  display:flex;justify-content:center;
+  padding:28px 20px 0;gap:0;
+}
+.tab-btn{
+  font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;text-transform:uppercase;
+  padding:13px 28px 12px;background:none;border:none;color:rgba(255,255,255,.3);
+  cursor:pointer;position:relative;transition:color .4s;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.tab-btn::after{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;
+  transform:scaleX(0);transition:transform .4s,background .4s;
+}
+.tab-btn.active{color:rgba(255,255,255,.85);}
+.tab-btn.active::after{transform:scaleX(1);}
+.tab-btn.tab-chakra.active::after{background:var(--or);}
+.tab-btn.tab-isis.active::after{background:#8B6914;}
+.tab-btn.tab-ker.active::after{background:#5C3D7A;}
+.tab-btn.tab-zep.active::after{background:#1A6B7A;}
+.tab-separator{width:1px;background:rgba(255,255,255,.08);margin:0;}
+
+/* ========= PAGES ========= */
+.page{display:none;position:relative;z-index:10;}
+.page.active{display:flex;flex-direction:column;min-height:calc(100vh - 90px);}
+
+/* ============================================
+   PAGE 1 — CHAKRAS / ARCHANGES / PRIÈRES
+   ============================================ */
+header{text-align:center;padding:36px 20px 18px;}
+.eyebrow{font-family:'Cinzel',serif;font-size:10px;letter-spacing:8px;color:rgba(255,255,255,.26);text-transform:uppercase;margin-bottom:9px;}
+.mtitle{font-family:'Cinzel Decorative',serif;font-size:clamp(18px,3.5vw,38px);font-weight:400;color:#fff;letter-spacing:3px;text-shadow:0 0 60px rgba(255,255,255,.13);}
+.msub{font-style:italic;font-size:13px;color:rgba(255,255,255,.27);letter-spacing:3px;margin-top:6px;}
+.hline{width:1px;height:36px;margin:18px auto 0;transition:background var(--t);}
+
+#dnav{display:flex;justify-content:center;padding:0 8px;flex-wrap:wrap;position:relative;z-index:20;}
+.dbtn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 10px 10px;background:none;border:none;cursor:pointer;position:relative;min-width:72px;transition:all .35s;}
+.dbtn::after{content:'';position:absolute;bottom:0;left:8%;right:8%;height:1px;background:currentColor;transform:scaleX(0);transition:transform .4s;}
+.dbtn:hover::after,.dbtn.active::after{transform:scaleX(1);}
+.dlotus{font-size:20px;transition:transform .3s,filter .3s;filter:grayscale(.7) brightness(.55);}
+.dbtn.active .dlotus,.dbtn:hover .dlotus{filter:grayscale(0) brightness(1.3);transform:scale(1.2) translateY(-2px);}
+.dname{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.27);transition:color .3s;}
+.dbtn.active .dname{color:rgba(255,255,255,.8);}
+.dang{font-style:italic;font-size:7px;color:rgba(255,255,255,.15);transition:color .3s;}
+.dbtn.active .dang{color:rgba(255,255,255,.45);}
+
+#pstage{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:28px 14px 50px;}
+.pcon{max-width:740px;width:100%;opacity:0;transform:translateY(16px);animation:rev .75s ease forwards;}
+@keyframes rev{to{opacity:1;transform:translateY(0);}}
+.pfr{position:relative;padding:46px 46px 40px;border:1px solid rgba(255,255,255,.07);background:rgba(5,8,16,.8);backdrop-filter:blur(22px);animation:breathe 9s ease-in-out infinite;}
+@keyframes breathe{0%,100%{box-shadow:0 0 60px rgba(0,0,0,.7);}50%{box-shadow:0 0 100px rgba(0,0,0,.9);}}
+.orn{position:absolute;width:44px;height:44px;border-style:solid;transition:border-color var(--t);}
+.orn.tl{top:-1px;left:-1px;border-width:2px 0 0 2px;}.orn.tr{top:-1px;right:-1px;border-width:2px 2px 0 0;}
+.orn.bl{bottom:-1px;left:-1px;border-width:0 0 2px 2px;}.orn.br{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
+.tshim{position:absolute;top:0;left:8%;right:8%;height:1px;transition:background var(--t);}
+.meta{text-align:center;margin-bottom:26px;}
+.mday{font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;text-transform:uppercase;color:rgba(255,255,255,.26);margin-bottom:8px;}
+.mangel{font-family:'Cinzel Decorative',serif;font-size:clamp(22px,3.5vw,42px);font-weight:400;line-height:1.1;transition:color var(--t),text-shadow var(--t);margin-bottom:5px;}
+.mtit{font-style:italic;font-size:13px;letter-spacing:3px;color:rgba(255,255,255,.3);}
+.fsym{text-align:center;font-size:48px;margin:22px 0;display:block;transition:filter var(--t),color var(--t);animation:floatS 7s ease-in-out infinite;}
+@keyframes floatS{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-9px) scale(1.06);}}
+.sep{display:flex;align-items:center;gap:13px;margin:20px 0;}
+.sl{flex:1;height:1px;background:rgba(255,255,255,.07);}
+.sd{width:4px;height:4px;border-radius:50%;transition:background var(--t),box-shadow var(--t);}
+.chkblock{margin:0 0 24px;padding:24px 28px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);position:relative;overflow:hidden;transition:border-color var(--t);}
+.chktop{position:absolute;top:0;left:0;right:0;height:1px;transition:background var(--t);}
+.chkheader{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+.lotuswrap{flex-shrink:0;width:68px;height:68px;position:relative;display:flex;align-items:center;justify-content:center;}
+.lotus{width:62px;height:62px;position:relative;animation:lspin 28s linear infinite;}
+@keyframes lspin{to{transform:rotate(360deg);}}
+.lp{position:absolute;top:50%;left:50%;width:11px;height:18px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;transform-origin:center bottom;opacity:.7;}
+.lc{position:absolute;top:50%;left:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);transition:background var(--t),box-shadow var(--t);}
+.lcount{position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:rgba(255,255,255,.27);white-space:nowrap;}
+.chkinfo{flex:1;}
+.sanskrit{font-family:'Noto Serif Devanagari',serif;font-size:24px;line-height:1;margin-bottom:3px;transition:color var(--t);text-shadow:0 0 16px currentColor;}
+.chkname{font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;transition:color var(--t);margin-bottom:3px;}
+.chkloc{font-style:italic;font-size:11px;color:rgba(255,255,255,.3);letter-spacing:2px;}
+.chkgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:13px;}
+.pill{padding:8px 11px;border:1px solid rgba(255,255,255,.05);background:rgba(0,0,0,.18);}
+.pilll{font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:4px;}
+.pillv{font-size:12px;line-height:1.4;color:rgba(255,248,235,.63);}
+.chkmeaning{font-style:italic;font-size:13px;line-height:1.9;color:rgba(255,248,235,.56);border-top:1px solid rgba(255,255,255,.05);padding-top:12px;}
+.bija{display:inline-block;margin-top:10px;font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;text-transform:uppercase;padding:5px 14px;border:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.28);transition:color var(--t),border-color var(--t);}
+.arclink{margin-bottom:22px;padding:14px 20px;border-left:2px solid rgba(255,255,255,.1);transition:border-color var(--t),background var(--t);}
+.arcll{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.18);margin-bottom:5px;}
+.arcltext{font-style:italic;font-size:13px;line-height:1.85;color:rgba(255,248,235,.5);}
+.arcltext strong{transition:color var(--t);}
+.ptext{font-family:'Cormorant Garamond',serif;font-size:clamp(15px,2vw,20px);font-style:italic;font-weight:300;line-height:2.1;color:rgba(255,248,235,.82);text-align:center;}
+.ptext strong{font-weight:600;font-style:normal;transition:color var(--t);}
+.ptext .invoc{display:block;font-size:clamp(11px,1.4vw,14px);letter-spacing:5px;color:rgba(255,255,255,.3);font-style:normal;text-transform:uppercase;font-family:'Cinzel',serif;margin-bottom:18px;}
+.vbox{margin-top:22px;text-align:center;padding:12px 18px;border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.015);transition:border-color var(--t);}
+.vlbl{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,.18);margin-bottom:5px;}
+.vval{font-size:11px;letter-spacing:4px;text-transform:uppercase;transition:color var(--t);}
+.rbadge{display:block;margin-top:16px;text-align:center;font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:4px;text-transform:uppercase;padding:6px;border:1px solid rgba(255,255,255,.05);transition:color var(--t),border-color var(--t);}
+.pnav{display:flex;justify-content:center;align-items:center;gap:34px;padding:22px;}
+.narr{background:none;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.32);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:16px;transition:all .3s;display:flex;align-items:center;justify-content:center;}
+.narr:hover{background:rgba(255,255,255,.05);color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.3);transform:scale(1.1);}
+.nind{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.25);text-transform:uppercase;text-align:center;}
+
+/* ============================================
+   PAGE 2 — DISCIPLINES D'ISIS
+   ============================================ */
+#page-isis{background:transparent;}
+
+.isis-header{text-align:center;padding:36px 20px 24px;position:relative;}
+.isis-eye{font-size:50px;display:block;margin-bottom:16px;animation:isis-eye-pulse 5s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(200,164,90,.5));}
+@keyframes isis-eye-pulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 16px rgba(200,164,90,.4));}50%{transform:scale(1.08);filter:drop-shadow(0 0 32px rgba(200,164,90,.7));}}
+.isis-title{font-family:'Cinzel Decorative',serif;font-size:clamp(18px,3.5vw,38px);font-weight:400;color:var(--isis-or);letter-spacing:4px;text-shadow:0 0 50px rgba(200,164,90,.4);margin-bottom:8px;}
+.isis-sub{font-style:italic;font-size:13px;color:rgba(200,164,90,.45);letter-spacing:3px;margin-bottom:6px;}
+.isis-hieroglyph{font-size:22px;letter-spacing:8px;color:rgba(200,164,90,.3);margin-top:10px;}
+.isis-divider{width:200px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,164,90,.4),transparent);margin:20px auto;}
+
+/* Nav des disciplines */
+.isis-disciplines-nav{
+  display:flex;justify-content:center;flex-wrap:wrap;
+  gap:6px;padding:0 16px 24px;max-width:860px;margin:0 auto;
+}
+.disc-btn{
+  font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;
+  padding:9px 14px;background:rgba(200,164,90,.04);
+  border:1px solid rgba(200,164,90,.15);color:rgba(200,164,90,.45);
+  cursor:pointer;transition:all .35s;position:relative;overflow:hidden;
+}
+.disc-btn::before{content:'';position:absolute;inset:0;background:rgba(200,164,90,.06);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.disc-btn:hover::before,.disc-btn.active::before{transform:scaleX(1);}
+.disc-btn:hover,.disc-btn.active{color:rgba(200,164,90,.9);border-color:rgba(200,164,90,.4);}
+.disc-btn.active{box-shadow:0 0 20px rgba(200,164,90,.1);}
+
+/* Contenu discipline */
+#isis-content{max-width:840px;margin:0 auto;padding:0 16px 60px;}
+.disc-panel{display:none;opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;}
+.disc-panel.active{display:block;animation:isis-rev .65s ease forwards;}
+@keyframes isis-rev{to{opacity:1;transform:translateY(0);}}
+
+/* Cadre principal Isis */
+.isis-frame{
+  position:relative;
+  border:1px solid rgba(200,164,90,.15);
+  background:rgba(6,8,14,.82);
+  backdrop-filter:blur(20px);
+  padding:44px 42px 38px;
+  overflow:hidden;
+}
+.isis-frame::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(200,164,90,.4),transparent);
+}
+.isis-frame::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(200,164,90,.2),transparent);
+}
+.iorn{position:absolute;width:42px;height:42px;border-style:solid;border-color:rgba(200,164,90,.25);}
+.iorn.tl{top:-1px;left:-1px;border-width:2px 0 0 2px;}
+.iorn.tr{top:-1px;right:-1px;border-width:2px 2px 0 0;}
+.iorn.bl{bottom:-1px;left:-1px;border-width:0 0 2px 2px;}
+.iorn.br{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
+
+/* En-tête discipline */
+.disc-head{text-align:center;margin-bottom:32px;}
+.disc-neter{font-size:40px;margin-bottom:12px;display:block;animation:floatS 8s ease-in-out infinite;filter:drop-shadow(0 0 12px rgba(200,164,90,.5));}
+.disc-hiero{font-size:28px;letter-spacing:6px;color:rgba(200,164,90,.5);margin-bottom:10px;font-style:normal;}
+.disc-num{font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;text-transform:uppercase;color:rgba(200,164,90,.35);margin-bottom:8px;}
+.disc-name{font-family:'Cinzel Decorative',serif;font-size:clamp(20px,3vw,34px);color:var(--isis-or);letter-spacing:3px;text-shadow:0 0 30px rgba(200,164,90,.35);margin-bottom:5px;}
+.disc-subtitle{font-style:italic;font-size:13px;color:rgba(200,164,90,.45);letter-spacing:3px;}
+
+.isis-sep{display:flex;align-items:center;gap:16px;margin:24px 0;}
+.isis-sl{flex:1;height:1px;background:rgba(200,164,90,.1);}
+.isis-sd{font-size:14px;color:rgba(200,164,90,.45);}
+
+/* Source manuscrite */
+.source-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:22px;padding:9px 18px;
+  border:1px solid rgba(200,164,90,.12);background:rgba(200,164,90,.04);
+}
+.source-icon{font-size:16px;}
+.source-text{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,164,90,.45);}
+
+/* Colonnes enseignement */
+.disc-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;}
+.disc-col{padding:16px 18px;border:1px solid rgba(200,164,90,.08);background:rgba(200,164,90,.025);}
+.col-label{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:4px;text-transform:uppercase;color:rgba(200,164,90,.4);margin-bottom:8px;}
+.col-val{font-size:13px;line-height:1.7;color:rgba(255,248,235,.6);}
+.col-val em{color:rgba(200,164,90,.75);font-style:italic;}
+
+/* Texte ésotérique principal */
+.esoterique{
+  font-style:italic;font-size:clamp(14px,1.9vw,18px);
+  line-height:2.1;color:rgba(255,248,235,.75);
+  text-align:center;margin-bottom:24px;
+}
+.esoterique strong{font-weight:600;font-style:normal;color:var(--isis-or);}
+.esoterique .isis-invoc{
+  display:block;font-family:'Cinzel',serif;font-size:11px;letter-spacing:5px;
+  text-transform:uppercase;color:rgba(200,164,90,.4);font-style:normal;margin-bottom:18px;
+}
+
+/* Papyrus citation */
+.papyrus-cite{
+  position:relative;
+  margin:24px 0;padding:22px 28px;
+  background:rgba(200,164,90,.04);
+  border-left:2px solid rgba(200,164,90,.3);
+}
+.papyrus-cite::before{
+  content:'"';font-family:'Cinzel Decorative',serif;font-size:60px;
+  color:rgba(200,164,90,.15);position:absolute;top:-10px;left:14px;line-height:1;
+}
+.papyrus-text{
+  font-style:italic;font-size:14px;line-height:2;
+  color:rgba(255,248,235,.6);padding-left:16px;
+}
+.papyrus-source{
+  font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(200,164,90,.35);margin-top:10px;padding-left:16px;
+}
+
+/* Pratique initiatique */
+.pratique-box{
+  padding:20px 24px;
+  border:1px solid rgba(200,164,90,.1);
+  background:rgba(0,0,0,.2);
+  margin-top:4px;
+}
+.pratique-label{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(200,164,90,.35);margin-bottom:12px;}
+.pratique-text{font-size:13.5px;line-height:1.9;color:rgba(255,248,235,.58);}
+.pratique-text strong{color:rgba(200,164,90,.8);font-weight:600;}
+
+/* Hiéroglyphes déco */
+.hiero-row{text-align:center;font-size:18px;letter-spacing:10px;color:rgba(200,164,90,.2);padding:14px 0;border-top:1px solid rgba(200,164,90,.07);margin-top:22px;}
+
+/* Footer Isis */
+.isis-footer{text-align:center;padding:20px 20px 32px;}
+.isis-footer p{font-style:italic;font-size:10px;color:rgba(200,164,90,.2);letter-spacing:4px;}
+
+/* ============================================
+   PAGE 3 — KER SESHETA
+   ============================================ */
+#page-ker{background:transparent;}
+
+/* Palette violet-indigo profond */
+.ker-header{text-align:center;padding:36px 20px 22px;position:relative;}
+.ker-glyph{font-size:54px;display:block;margin-bottom:14px;
+  animation:ker-pulse 6s ease-in-out infinite;
+  filter:drop-shadow(0 0 22px rgba(160,100,220,.6));}
+@keyframes ker-pulse{0%,100%{transform:scale(1) rotate(0deg);filter:drop-shadow(0 0 18px rgba(160,100,220,.5));}50%{transform:scale(1.1) rotate(3deg);filter:drop-shadow(0 0 40px rgba(180,120,255,.8));}}
+.ker-title{font-family:'Cinzel Decorative',serif;font-size:clamp(18px,3.5vw,38px);font-weight:400;
+  color:#B87FE0;letter-spacing:4px;text-shadow:0 0 50px rgba(160,100,220,.5);margin-bottom:7px;}
+.ker-sub{font-style:italic;font-size:13px;color:rgba(180,130,220,.4);letter-spacing:3px;margin-bottom:5px;}
+.ker-egypt{font-size:20px;letter-spacing:8px;color:rgba(160,100,220,.3);margin-top:9px;}
+.ker-divider{width:200px;height:1px;background:linear-gradient(90deg,transparent,rgba(160,100,220,.4),transparent);margin:18px auto;}
+.ker-intro{font-style:italic;font-size:12px;color:rgba(180,130,220,.35);letter-spacing:2px;
+  max-width:600px;margin:0 auto;line-height:2;text-align:center;padding:0 16px;}
+
+/* Navigation des principes */
+.ker-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:5px;padding:18px 14px 22px;max-width:940px;margin:0 auto;}
+.ker-btn{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;
+  padding:8px 13px;background:rgba(160,100,220,.04);
+  border:1px solid rgba(160,100,220,.14);color:rgba(160,100,220,.42);
+  cursor:pointer;transition:all .35s;position:relative;overflow:hidden;}
+.ker-btn::before{content:'';position:absolute;inset:0;background:rgba(160,100,220,.07);
+  transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.ker-btn:hover::before,.ker-btn.active::before{transform:scaleX(1);}
+.ker-btn:hover,.ker-btn.active{color:rgba(180,130,255,.95);border-color:rgba(160,100,220,.45);}
+.ker-btn.active{box-shadow:0 0 22px rgba(160,100,220,.12);}
+
+/* Contenu */
+#ker-content{max-width:860px;margin:0 auto;padding:0 14px 60px;}
+.ker-panel{display:none;}
+.ker-panel.active{display:block;animation:ker-rev .65s ease forwards;opacity:0;transform:translateY(16px);}
+@keyframes ker-rev{to{opacity:1;transform:translateY(0);}}
+
+/* Frame principal */
+.ker-frame{position:relative;border:1px solid rgba(160,100,220,.14);
+  background:rgba(5,4,14,.84);backdrop-filter:blur(22px);
+  padding:44px 42px 38px;overflow:hidden;}
+.ker-frame::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(160,100,220,.4),transparent);}
+.ker-frame::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(160,100,220,.18),transparent);}
+.korn{position:absolute;width:42px;height:42px;border-style:solid;border-color:rgba(160,100,220,.22);}
+.korn.tl{top:-1px;left:-1px;border-width:2px 0 0 2px;}
+.korn.tr{top:-1px;right:-1px;border-width:2px 2px 0 0;}
+.korn.bl{bottom:-1px;left:-1px;border-width:0 0 2px 2px;}
+.korn.br{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
+
+/* En-tête du principe */
+.ker-head{text-align:center;margin-bottom:28px;}
+.ker-neter{font-size:44px;display:block;margin-bottom:10px;
+  animation:floatS 8s ease-in-out infinite;
+  filter:drop-shadow(0 0 14px rgba(160,100,220,.6));}
+.ker-hiero-head{font-size:24px;letter-spacing:6px;color:rgba(160,100,220,.45);margin-bottom:9px;}
+.ker-num{font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;text-transform:uppercase;
+  color:rgba(160,100,220,.35);margin-bottom:7px;}
+.ker-pname{font-family:'Cinzel Decorative',serif;font-size:clamp(19px,3vw,32px);
+  color:#B87FE0;letter-spacing:3px;text-shadow:0 0 28px rgba(160,100,220,.4);margin-bottom:5px;}
+.ker-psub{font-style:italic;font-size:13px;color:rgba(160,100,220,.42);letter-spacing:2px;}
+
+/* Séparateur violet */
+.ker-sep{display:flex;align-items:center;gap:15px;margin:22px 0;}
+.ker-sl{flex:1;height:1px;background:rgba(160,100,220,.1);}
+.ker-sd{font-size:14px;color:rgba(160,100,220,.4);}
+
+/* Source */
+.ker-source{display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;
+  padding:8px 16px;border:1px solid rgba(160,100,220,.1);background:rgba(160,100,220,.035);}
+.ker-source-icon{font-size:15px;}
+.ker-source-txt{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;
+  text-transform:uppercase;color:rgba(160,100,220,.42);}
+
+/* Grille principes */
+.ker-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.ker-cell{padding:13px 16px;border:1px solid rgba(160,100,220,.07);background:rgba(160,100,220,.025);}
+.ker-cell-lbl{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(160,100,220,.36);margin-bottom:6px;}
+.ker-cell-val{font-size:12.5px;line-height:1.65;color:rgba(255,248,235,.6);}
+.ker-cell-val em{color:rgba(180,130,255,.75);font-style:italic;}
+
+/* Texte ésotérique principal */
+.ker-esot{font-style:italic;font-size:clamp(14px,1.9vw,18px);line-height:2.15;
+  color:rgba(255,248,235,.78);text-align:center;margin-bottom:22px;}
+.ker-esot strong{font-weight:600;font-style:normal;color:#B87FE0;}
+.ker-esot .ker-invoc{display:block;font-family:'Cinzel',serif;font-size:11px;letter-spacing:5px;
+  text-transform:uppercase;color:rgba(160,100,220,.38);font-style:normal;margin-bottom:18px;}
+
+/* Citation manuscrit */
+.ker-cite{position:relative;margin:22px 0;padding:20px 26px;
+  background:rgba(160,100,220,.04);border-left:2px solid rgba(160,100,220,.28);}
+.ker-cite::before{content:'"';font-family:'Cinzel Decorative',serif;font-size:55px;
+  color:rgba(160,100,220,.12);position:absolute;top:-8px;left:12px;line-height:1;}
+.ker-cite-txt{font-style:italic;font-size:13.5px;line-height:2;
+  color:rgba(255,248,235,.58);padding-left:14px;}
+.ker-cite-src{font-family:'Cinzel',serif;font-size:7px;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(160,100,220,.32);margin-top:9px;padding-left:14px;}
+
+/* Principes fondamentaux — accordéon */
+.principes-title{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:5px;text-transform:uppercase;
+  color:rgba(160,100,220,.35);margin:22px 0 12px;text-align:center;}
+.principe-item{margin-bottom:8px;border:1px solid rgba(160,100,220,.08);overflow:hidden;}
+.principe-trigger{width:100%;background:rgba(160,100,220,.03);border:none;
+  display:flex;align-items:center;gap:12px;padding:12px 16px;
+  cursor:pointer;transition:background .3s;text-align:left;}
+.principe-trigger:hover{background:rgba(160,100,220,.06);}
+.principe-num{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;
+  color:rgba(160,100,220,.4);min-width:28px;}
+.principe-nom{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(180,130,255,.7);flex:1;}
+.principe-arrow{font-size:10px;color:rgba(160,100,220,.4);transition:transform .3s;}
+.principe-trigger.open .principe-arrow{transform:rotate(180deg);}
+.principe-body{max-height:0;overflow:hidden;transition:max-height .5s ease;}
+.principe-body.open{max-height:400px;}
+.principe-content{padding:14px 16px 16px 56px;font-style:italic;font-size:13px;
+  line-height:1.9;color:rgba(255,248,235,.56);}
+.principe-content strong{color:rgba(180,130,255,.75);font-weight:600;font-style:normal;}
+.principe-content .p-sub{display:block;font-family:'Cinzel',serif;font-size:8px;
+  letter-spacing:3px;text-transform:uppercase;color:rgba(160,100,220,.35);
+  margin-bottom:8px;font-style:normal;}
+
+/* Pratique */
+.ker-pratique{padding:18px 22px;border:1px solid rgba(160,100,220,.1);background:rgba(0,0,0,.2);margin-top:4px;}
+.ker-pratique-lbl{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(160,100,220,.32);margin-bottom:10px;}
+.ker-pratique-txt{font-size:13px;line-height:1.9;color:rgba(255,248,235,.55);}
+.ker-pratique-txt strong{color:rgba(180,130,255,.75);font-weight:600;}
+
+/* Hiéro deco bas */
+.ker-hiero-foot{text-align:center;font-size:17px;letter-spacing:10px;
+  color:rgba(160,100,220,.18);padding:13px 0;
+  border-top:1px solid rgba(160,100,220,.07);margin-top:20px;}
+
+/* Footer ker */
+.ker-footer{text-align:center;padding:18px 20px 30px;}
+.ker-footer p{font-style:italic;font-size:10px;color:rgba(160,100,220,.18);letter-spacing:4px;}
+
+@media(max-width:640px){
+  .ker-frame{padding:28px 16px;}
+  .ker-grid{grid-template-columns:1fr;}
+  .ker-nav{gap:4px;}.ker-btn{padding:7px 9px;font-size:7px;}
+}
+@keyframes pfl{0%{transform:translateY(100vh) scale(0);opacity:0;}5%{opacity:1;}95%{opacity:.3;}100%{transform:translateY(-5vh) translateX(var(--dx)) scale(.3);opacity:0;}}
+
+/* ============================================
+   PAGE 4 — ZEP TEPI
+   ============================================ */
+#page-zep{background:transparent;}
+:root{--zep-teal:#2DD4BF;--zep-gold:#D4A96A;}
+.zep-header{text-align:center;padding:40px 20px 22px;position:relative;overflow:hidden;}
+.zep-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(13,77,92,.25) 0%,transparent 70%);pointer-events:none;}
+.zep-cosmos{position:relative;width:110px;height:110px;margin:0 auto 18px;}
+.zep-ring{position:absolute;border-radius:50%;border:1px solid rgba(45,212,191,.2);top:50%;left:50%;transform:translate(-50%,-50%);}
+.zep-ring:nth-child(1){width:110px;height:110px;animation:zep-spin 40s linear infinite;}
+.zep-ring:nth-child(2){width:80px;height:80px;border-color:rgba(45,212,191,.15);animation:zep-spin 25s linear infinite reverse;}
+.zep-ring:nth-child(3){width:50px;height:50px;border-color:rgba(45,212,191,.3);animation:zep-spin 15s linear infinite;}
+.zep-center-dot{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:22px;height:22px;border-radius:50%;background:radial-gradient(circle,rgba(45,212,191,.9),rgba(13,77,92,.4));box-shadow:0 0 20px rgba(45,212,191,.6),0 0 40px rgba(45,212,191,.2);font-size:13px;display:flex;align-items:center;justify-content:center;animation:zep-pulse 4s ease-in-out infinite;}
+@keyframes zep-spin{to{transform:translate(-50%,-50%) rotate(360deg);}}
+@keyframes zep-pulse{0%,100%{box-shadow:0 0 20px rgba(45,212,191,.5),0 0 40px rgba(45,212,191,.2);}50%{box-shadow:0 0 35px rgba(45,212,191,.8),0 0 70px rgba(45,212,191,.3);}}
+.zep-title{font-family:'Cinzel Decorative',serif;font-size:clamp(22px,4vw,46px);font-weight:400;color:var(--zep-teal);letter-spacing:5px;text-shadow:0 0 50px rgba(45,212,191,.45),0 0 100px rgba(45,212,191,.15);margin-bottom:6px;}
+.zep-title-eg{font-family:'Cinzel',serif;font-size:12px;letter-spacing:8px;color:rgba(45,212,191,.35);text-transform:uppercase;margin-bottom:7px;}
+.zep-sub{font-style:italic;font-size:13px;color:rgba(45,212,191,.32);letter-spacing:3px;margin-bottom:8px;}
+.zep-hiero{font-size:20px;letter-spacing:10px;color:rgba(45,212,191,.22);margin-bottom:10px;}
+.zep-divider{width:260px;height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,.4),transparent);margin:14px auto;}
+.zep-intro-block{max-width:680px;margin:0 auto;padding:16px 22px;border:1px solid rgba(45,212,191,.1);background:rgba(45,212,191,.03);font-style:italic;font-size:13px;color:rgba(232,244,248,.42);letter-spacing:1.5px;line-height:2;text-align:center;}
+.zep-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:5px;padding:18px 14px 22px;max-width:1000px;margin:0 auto;}
+.zep-btn{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;text-transform:uppercase;padding:8px 12px;background:rgba(45,212,191,.03);border:1px solid rgba(45,212,191,.12);color:rgba(45,212,191,.38);cursor:pointer;transition:all .35s;position:relative;overflow:hidden;}
+.zep-btn::before{content:'';position:absolute;inset:0;background:rgba(45,212,191,.06);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.zep-btn:hover::before,.zep-btn.active::before{transform:scaleX(1);}
+.zep-btn:hover,.zep-btn.active{color:rgba(45,212,191,.95);border-color:rgba(45,212,191,.45);box-shadow:0 0 16px rgba(45,212,191,.08);}
+#zep-content{max-width:880px;margin:0 auto;padding:0 14px 70px;}
+.zep-panel{display:none;}
+.zep-panel.active{display:block;animation:zep-rev .65s ease forwards;opacity:0;transform:translateY(16px);}
+@keyframes zep-rev{to{opacity:1;transform:translateY(0);}}
+.zep-frame{position:relative;border:1px solid rgba(45,212,191,.12);background:rgba(3,11,14,.88);backdrop-filter:blur(24px);padding:46px 44px 40px;overflow:hidden;}
+.zep-frame::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,.45),transparent);}
+.zep-frame::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(45,212,191,.15),transparent);}
+.zep-frame-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:180px;color:rgba(45,212,191,.025);pointer-events:none;z-index:0;user-select:none;animation:zep-spin 120s linear infinite;}
+.zorn{position:absolute;width:44px;height:44px;border-style:solid;border-color:rgba(45,212,191,.2);}
+.zorn.tl{top:-1px;left:-1px;border-width:2px 0 0 2px;}.zorn.tr{top:-1px;right:-1px;border-width:2px 2px 0 0;}
+.zorn.bl{bottom:-1px;left:-1px;border-width:0 0 2px 2px;}.zorn.br{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
+.zep-sec-head{text-align:center;margin-bottom:28px;position:relative;z-index:1;}
+.zep-sec-glyph{font-size:50px;display:block;margin-bottom:11px;animation:floatS 8s ease-in-out infinite;filter:drop-shadow(0 0 16px rgba(45,212,191,.6));}
+.zep-sec-hiero{font-size:20px;letter-spacing:8px;color:rgba(45,212,191,.35);margin-bottom:9px;}
+.zep-sec-num{font-family:'Cinzel',serif;font-size:9px;letter-spacing:7px;text-transform:uppercase;color:rgba(45,212,191,.28);margin-bottom:7px;}
+.zep-sec-name{font-family:'Cinzel Decorative',serif;font-size:clamp(20px,3.2vw,36px);color:var(--zep-teal);letter-spacing:3px;text-shadow:0 0 28px rgba(45,212,191,.4);margin-bottom:5px;}
+.zep-sec-sub{font-style:italic;font-size:13px;color:rgba(45,212,191,.35);letter-spacing:2px;}
+.zep-sep{display:flex;align-items:center;gap:16px;margin:22px 0;position:relative;z-index:1;}
+.zep-sl{flex:1;height:1px;background:rgba(45,212,191,.1);}
+.zep-sd{color:rgba(45,212,191,.38);font-size:14px;}
+.zep-source{display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;padding:8px 17px;border:1px solid rgba(45,212,191,.1);background:rgba(45,212,191,.03);position:relative;z-index:1;}
+.zep-source-txt{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(45,212,191,.38);}
+.zep-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;position:relative;z-index:1;}
+.zep-cell{padding:14px 16px;border:1px solid rgba(45,212,191,.07);background:rgba(45,212,191,.025);}
+.zep-cell-lbl{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(45,212,191,.33);margin-bottom:6px;}
+.zep-cell-val{font-size:12.5px;line-height:1.65;color:rgba(232,244,248,.58);}
+.zep-cell-val em{color:rgba(45,212,191,.75);font-style:italic;}
+.zep-esot{font-style:italic;font-size:clamp(14.5px,2vw,19px);line-height:2.2;color:rgba(232,244,248,.8);text-align:center;margin-bottom:22px;position:relative;z-index:1;}
+.zep-esot strong{font-weight:600;font-style:normal;color:var(--zep-teal);}
+.zep-esot .zinvoc{display:block;font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;text-transform:uppercase;color:rgba(45,212,191,.32);font-style:normal;margin-bottom:20px;}
+.zep-ms{position:relative;margin:22px 0;padding:22px 28px 16px;background:rgba(45,212,191,.04);border-left:2px solid rgba(45,212,191,.28);z-index:1;}
+.zep-ms::before{content:'"';font-family:'Cinzel Decorative',serif;font-size:55px;color:rgba(45,212,191,.12);position:absolute;top:-8px;left:12px;line-height:1;}
+.zep-ms-txt{font-style:italic;font-size:13.5px;line-height:2;color:rgba(232,244,248,.56);padding-left:14px;}
+.zep-ms-src{font-family:'Cinzel',serif;font-size:7px;letter-spacing:4px;text-transform:uppercase;color:rgba(45,212,191,.28);margin-top:9px;padding-left:14px;}
+.zep-revelation{margin:22px 0;padding:22px 26px;border:1px solid rgba(45,212,191,.14);background:linear-gradient(135deg,rgba(45,212,191,.04),rgba(3,11,14,.6));position:relative;z-index:1;overflow:hidden;}
+.zep-revelation::before{content:'𓇯';position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:80px;color:rgba(45,212,191,.06);pointer-events:none;}
+.zep-rev-label{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:5px;text-transform:uppercase;color:rgba(45,212,191,.38);margin-bottom:11px;}
+.zep-rev-txt{font-size:13.5px;line-height:2;color:rgba(232,244,248,.6);}
+.zep-rev-txt strong{color:rgba(45,212,191,.85);font-weight:600;}
+.zep-rev-txt em{color:rgba(212,169,106,.75);font-style:italic;}
+.zep-depths-title{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:5px;text-transform:uppercase;color:rgba(45,212,191,.3);margin:24px 0 12px;text-align:center;position:relative;z-index:1;}
+.zdepth-item{margin-bottom:7px;border:1px solid rgba(45,212,191,.07);overflow:hidden;position:relative;z-index:1;}
+.zdepth-trigger{width:100%;background:rgba(45,212,191,.02);border:none;display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;transition:background .3s;text-align:left;}
+.zdepth-trigger:hover{background:rgba(45,212,191,.05);}
+.zdepth-num{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:rgba(45,212,191,.36);min-width:26px;}
+.zdepth-nom{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(45,212,191,.7);flex:1;}
+.zdepth-arr{font-size:10px;color:rgba(45,212,191,.32);transition:transform .3s;}
+.zdepth-trigger.open .zdepth-arr{transform:rotate(180deg);}
+.zdepth-body{max-height:0;overflow:hidden;transition:max-height .55s ease;}
+.zdepth-body.open{max-height:600px;}
+.zdepth-content{padding:14px 16px 16px 54px;font-style:italic;font-size:13px;line-height:1.95;color:rgba(232,244,248,.55);}
+.zdepth-content strong{color:rgba(45,212,191,.78);font-weight:600;font-style:normal;}
+.zdepth-content em{color:rgba(212,169,106,.72);}
+.zdepth-content .zd-sub{display:block;font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(45,212,191,.28);margin-bottom:8px;font-style:normal;}
+.zep-pratique{padding:20px 24px;border:1px solid rgba(45,212,191,.1);background:rgba(0,0,0,.25);margin-top:4px;position:relative;z-index:1;}
+.zep-prat-lbl{font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(45,212,191,.28);margin-bottom:10px;}
+.zep-prat-txt{font-size:13.5px;line-height:1.95;color:rgba(232,244,248,.55);}
+.zep-prat-txt strong{color:rgba(45,212,191,.78);font-weight:600;}
+.zep-prat-txt em{color:rgba(212,169,106,.68);}
+.zep-hiero-foot{text-align:center;font-size:18px;letter-spacing:12px;color:rgba(45,212,191,.16);padding:13px 0;border-top:1px solid rgba(45,212,191,.07);margin-top:20px;}
+.zep-footer{text-align:center;padding:20px 20px 32px;}
+.zep-footer p{font-style:italic;font-size:10px;color:rgba(45,212,191,.15);letter-spacing:4px;}
+@media(max-width:640px){.zep-frame{padding:28px 16px;}.zep-grid{grid-template-columns:1fr;}.zep-nav{gap:4px;}.zep-btn{padding:7px 9px;font-size:7px;}.zep-title{font-size:22px;}}
+
+@media(max-width:640px){
+  .pfr,.isis-frame{padding:30px 18px;}
+  .dbtn{min-width:40px;padding:9px 5px;}.dang{display:none;}
+  .chkgrid,.disc-cols{grid-template-columns:1fr;}
+  .chkheader{flex-direction:column;text-align:center;}
+  .isis-disciplines-nav{gap:5px;}
+  .disc-btn{padding:7px 10px;font-size:7px;}
+  .tab-btn{padding:11px 16px 10px;font-size:9px;}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cur"></div>
+<div class="cring" id="crg"></div>
+<canvas id="bgc"></canvas>
+<div id="dov"></div>
+
+<!-- ONGLETS -->
+<div id="tab-bar">
+  <button class="tab-btn tab-chakra active" onclick="switchTab('chakra')">
+    ☸ &nbsp; Chakras · Archanges
+  </button>
+  <div class="tab-separator"></div>
+  <button class="tab-btn tab-isis" onclick="switchTab('isis')">
+    𓂀 &nbsp; Disciplines d'Isis
+  </button>
+  <div class="tab-separator"></div>
+  <button class="tab-btn tab-ker" onclick="switchTab('ker')">
+    𓇽 &nbsp; Ker Sesheta
+  </button>
+  <div class="tab-separator"></div>
+  <button class="tab-btn tab-zep" onclick="switchTab('zep')">
+    𓇯 &nbsp; Zep Tepi
+  </button>
+</div>
+
+<!-- ===================== PAGE 1 : CHAKRAS ===================== -->
+<div class="page active" id="page-chakra">
+  <header>
+    <div class="eyebrow">Enseignement Védique & Céleste</div>
+    <h1 class="mtitle">Chakras · Lotus · Archanges</h1>
+    <p class="msub">Sept centres de lumière — sept gardiens du Divin</p>
+    <div class="hline" id="hl"></div>
+  </header>
+  <nav id="dnav"></nav>
+  <div id="pstage">
+    <div class="pcon" id="pc">
+      <div class="pfr">
+        <div class="orn tl" id="otl"></div><div class="orn tr" id="otr"></div>
+        <div class="orn bl" id="obl"></div><div class="orn br" id="obr"></div>
+        <div class="tshim" id="ts"></div>
+        <div class="meta">
+          <div class="mday" id="mday"></div>
+          <div class="mangel" id="mang"></div>
+          <div class="mtit" id="mtit"></div>
+        </div>
+        <span class="fsym" id="fsym"></span>
+        <div class="sep"><div class="sl"></div><div class="sd" id="sd1"></div><div class="sl"></div></div>
+        <div class="chkblock" id="chkb">
+          <div class="chktop" id="chkt"></div>
+          <div class="chkheader">
+            <div class="lotuswrap"><div class="lotus" id="lotus"></div><span class="lcount" id="lcount"></span></div>
+            <div class="chkinfo">
+              <div class="sanskrit" id="sk"></div>
+              <div class="chkname" id="cn"></div>
+              <div class="chkloc" id="cl"></div>
+            </div>
+          </div>
+          <div class="chkgrid">
+            <div class="pill"><div class="pilll">Élément Primordial</div><div class="pillv" id="pe"></div></div>
+            <div class="pill"><div class="pilll">Mantram Bija</div><div class="pillv" id="pm"></div></div>
+            <div class="pill"><div class="pilll">Pétales du Lotus</div><div class="pillv" id="pp"></div></div>
+            <div class="pill"><div class="pilll">Sens Éveillé</div><div class="pillv" id="ps"></div></div>
+          </div>
+          <p class="chkmeaning" id="cm"></p>
+          <span class="bija" id="bj"></span>
+        </div>
+        <div class="arclink" id="al">
+          <div class="arcll">☀ Correspondance Céleste</div>
+          <p class="arcltext" id="alt"></p>
+        </div>
+        <div class="sep"><div class="sl"></div><div class="sd" id="sd2"></div><div class="sl"></div></div>
+        <div class="ptext" id="pt"></div>
+        <div class="vbox" id="vb"><div class="vlbl">Vertu & Intention du Jour</div><div class="vval" id="vv"></div></div>
+        <span class="rbadge" id="rb"></span>
+      </div>
+    </div>
+  </div>
+  <nav class="pnav">
+    <button class="narr" onclick="chDay(-1)">←</button>
+    <span class="nind" id="ni"></span>
+    <button class="narr" onclick="chDay(1)">→</button>
+  </nav>
+  <footer><p>✦ &nbsp; Sapta Chakra · Sept Archanges · Ronde de Lumière Éternelle &nbsp; ✦</p></footer>
+</div>
+
+<!-- ===================== PAGE 2 : ISIS ===================== -->
+<div class="page" id="page-isis">
+  <div class="isis-header">
+    <span class="isis-eye">𓂀</span>
+    <h2 class="isis-title">Les Disciplines d'Isis</h2>
+    <p class="isis-sub">Enseignement ésotérique des Mystères d'Égypte</p>
+    <div class="isis-hieroglyph">𓇋𓊪𓏏 · 𓂀 · 𓋴𓆑𓏏</div>
+    <div class="isis-divider"></div>
+    <p style="font-style:italic;font-size:12px;color:rgba(200,164,90,.35);letter-spacing:2px;max-width:560px;margin:0 auto;line-height:2;">
+      Tiré des Textes des Pyramides (2400 av. J.-C.), du Livre des Morts (Papyrus d'Ani),<br>
+      du Corpus Hermeticum, des Hymnes à Isis et des Rituels de Philae
+    </p>
+  </div>
+
+  <div class="isis-disciplines-nav" id="disc-nav"></div>
+  <div id="isis-content"></div>
+
+  <div class="isis-footer">
+    <p>𓂀 &nbsp; Medu Neter — Les Paroles Divines d'Isis &nbsp; 𓂀</p>
+  </div>
+</div>
+
+<!-- ===================== PAGE 3 : KER SESHETA ===================== -->
+<div class="page" id="page-ker">
+  <div class="ker-header">
+    <span class="ker-glyph">𓇽</span>
+    <h2 class="ker-title">Ker Sesheta</h2>
+    <p class="ker-sub">La Chambre des Mystères Cachés — Savoir Ésotérique d'Égypte</p>
+    <div class="ker-egypt">𓇽 𓋴𓆓𓏏𓈖 𓂧𓅱𓈖𓇼 𓊪𓏏𓂋</div>
+    <div class="ker-divider"></div>
+    <p class="ker-intro">
+      Enseignement ésotérique des Textes des Pyramides (2400 av. J.-C.),<br>
+      du Corpus Hermeticum, du Livre de l'Amdouat,<br>
+      des Mystères d'Abydos et des Tablettes d'Émeraude de Thot
+    </p>
+  </div>
+  <div class="ker-nav" id="ker-nav"></div>
+  <div id="ker-content"></div>
+  <div class="ker-footer">
+    <p>𓇽 &nbsp; Ker Sesheta — La Chambre qui Révèle ce qui Est Toujours Caché &nbsp; 𓇽</p>
+  </div>
+</div>
+
+<!-- ===================== PAGE 4 : ZEP TEPI ===================== -->
+<div class="page" id="page-zep">
+  <div class="zep-header">
+    <div class="zep-cosmos">
+      <div class="zep-ring"></div>
+      <div class="zep-ring"></div>
+      <div class="zep-ring"></div>
+      <div class="zep-center-dot">𓇯</div>
+    </div>
+    <h2 class="zep-title">Zep Tepi</h2>
+    <div class="zep-title-eg">𓇯 Zp Tpj · Le Temps Premier 𓇯</div>
+    <p class="zep-sub">Avant le temps · Avant les dieux · Avant la lumière</p>
+    <div class="zep-hiero">𓇯 𓏠𓈖 𓐍𓊪𓏏 𓂋𓇋𓏏 𓊪𓏏𓂋</div>
+    <div class="zep-divider"></div>
+    <div class="zep-intro-block">
+      Sources : Textes des Pyramides (2400 av. J.-C.) · Hymnes à Atoum de Memphis ·<br>
+      Papyrus de Bremner-Rhind · Livre du Souffle · Cosmogonie d'Héliopolis ·<br>
+      Tablettes de Shabaka · Corpus Hermeticum · Livre des Cavernes
+    </div>
+  </div>
+  <div class="zep-nav" id="zep-nav"></div>
+  <div id="zep-content"></div>
+  <div class="zep-footer">
+    <p>𓇯 &nbsp; Zep Tepi — Ce qui Était Avant que Quoi que Ce Soit Ne Fût &nbsp; 𓇯</p>
+  </div>
+</div>
+
+<script>
+// ===========================================================
+// DONNÉES CHAKRAS (inchangées)
+// ===========================================================
+const D=[
+{day:0,name:'Dimanche',angel:'Michaël',title:'Prince de la Milice Céleste',glyph:'🌸',symbol:'☀',color:'#C9A84C',rgb:'201,168,76',ov:'radial-gradient(ellipse at 50% 25%,rgba(201,168,76,.08) 0%,transparent 68%)',ray:'Rayon d\'Or — Protection & Vérité',virtue:'Force · Courage · Victoire',chakra:{sk:'सहस्रार',name:'Couronne — Sahasrāra',loc:'Sommet du crâne',petals:1000,plabel:'1 000 pétales — Lotus Millefeuille',elem:'Conscience pure / Ākāsha universel',mantra:'OM — AUM (silence primordial)',sense:'Connexion divine / Transcendance',rgb:'201,168,76',meaning:'Le Lotus aux Mille Pétales est la fleur suprême de l\'éveil. Siège de la conscience cosmique et de l\'union avec le Divin (Brahman), Sahasrāra s\'ouvre quand toute dualité se dissout. Dans la tradition Vedanta, c\'est le point de rencontre entre l\'âme individuelle (Ātman) et l\'Âme universelle. Ses mille pétales portent toutes les lettres du Sanskrit — la totalité du Verbe sacré manifesté.',bija:'☀ Bija : OM — la vibration primordiale qui précède toute création'},link:'<strong>Michaël</strong>, gardien de la vérité absolue, résonne avec Sahasrāra : tous deux règnent sur la <strong>connexion directe à la Source divine</strong>. Son épée tranche le voile de maya comme Sahasrāra dissout le voile entre l\'humain et le divin.',prayer:`<span class="invoc">Ô Michaël · Sahasrāra</span>Toi dont l'épée tranche le voile de maya,<br>toi dont le lotus millefeuille s'ouvre<br>au sommet de toute création —<br><br><strong>ouvre le portail de ma couronne</strong> ce matin,<br>que la lumière divine descende<br>comme une pluie d'or dans mon être.<br><br>Que je sois<br>un canal pur de la Volonté céleste,<br><strong>que chaque acte soit une offrande</strong>.`},
+{day:1,name:'Lundi',angel:'Gabriel',title:'Messager du Verbe Sacré',glyph:'🪷',symbol:'☽',color:'#C8D8FF',rgb:'180,200,255',ov:'radial-gradient(ellipse at 50% 25%,rgba(180,200,255,.07) 0%,transparent 68%)',ray:'Rayon d\'Argent — Révélation & Annonce',virtue:'Clarté · Parole · Intuition',chakra:{sk:'आज्ञा',name:'Troisième Œil — Ājñā',loc:'Entre les deux sourcils',petals:2,plabel:'2 pétales — Lotus de la Vision',elem:'Lumière / Mental supérieur (Mahat)',mantra:'OM — Sham',sense:'Sixième sens / Clairvoyance',rgb:'180,200,255',meaning:'Ājñā signifie "commandement" ou "perception au-delà". Ce Lotus à Deux Pétales représente les nadis Ida (lunaire) et Pingala (solaire) qui convergent ici. Ses pétales portent HA et KSHAM — la dualité transcendée. C\'est le siège de l\'intuition supérieure et de la sagesse qui dépasse la raison. Quand Ājñā s\'éveille, le voile entre les mondes s\'amincit.',bija:'☽ Bija : OM — la vision qui traverse toutes les dimensions'},link:'<strong>Gabriel</strong>, porteur de révélations, s\'aligne avec Ājñā, le centre de la <strong>vision intérieure et de la transmission sacrée</strong>. Ses annonces ne s\'entendent pas avec les oreilles du corps — elles se reçoivent dans la lumière du troisième œil.',prayer:`<span class="invoc">Ô Gabriel · Ājñā</span>Toi dont la trompette résonne entre les mondes,<br>toi dont le lotus à deux pétales<br>voit ce que les yeux refusent —<br><br><strong>ouvre mon troisième œil</strong> en ce lundi,<br>que je perçoive les messages cachés<br>dans le silence entre les mots.<br><br><strong>Que ma parole soit précise comme une flèche de lumière</strong><br>et mon écoute profonde comme un puits sacré.`},
+{day:2,name:'Mardi',angel:'Chamuel',title:'Gardien de l\'Amour Universel',glyph:'🌺',symbol:'♡',color:'#FF8FAB',rgb:'255,143,171',ov:'radial-gradient(ellipse at 50% 25%,rgba(255,143,171,.08) 0%,transparent 68%)',ray:'Rayon Rose — Amour & Compassion',virtue:'Amour · Pardon · Tendresse',chakra:{sk:'अनाहत',name:'Cœur — Anāhata',loc:'Centre de la poitrine',petals:12,plabel:'12 pétales — Lotus du Cœur',elem:'Air / Vāyu (le souffle vivant)',mantra:'YAM — le son du cœur',sense:'Toucher / Ressenti émotionnel profond',rgb:'255,143,171',meaning:'Anāhata signifie "son non-frappé" — la vibration qui existe sans cause, le battement originel de l\'amour pur. Ses douze pétales portent amour, joie, paix, harmonie, empathie, compréhension, pardon, clarté, pureté, unité, compassion et bienveillance. En son centre réside l\'étoile à six branches védique — union entre ciel et terre. C\'est ici que réside le Jivātman, l\'étincelle divine individuelle.',bija:'♡ Bija : YAM — le son qui dissout les murs du cœur'},link:'<strong>Chamuel</strong> est l\'archange dont l\'essence est pure Anāhata — tous deux gardent le feu de l\'<strong>amour inconditionnel</strong> au centre de l\'être.',prayer:`<span class="invoc">Ô Chamuel · Anāhata</span>Toi dont le lotus à douze pétales<br>bat au centre de toute chose —<br><br><strong>réveille le son non-frappé</strong> dans ma poitrine,<br>cet amour qui ne demande rien<br>parce qu'il est déjà tout.<br><br><strong>Que le cœur s'ouvre comme une fleur au matin</strong>,<br>pétale après pétale,<br>sans peur, sans condition.`},
+{day:3,name:'Mercredi',angel:'Raphaël',title:'Médecin de l\'Âme & du Corps',glyph:'🌿',symbol:'⚕',color:'#5EEAD4',rgb:'94,234,212',ov:'radial-gradient(ellipse at 50% 25%,rgba(94,234,212,.07) 0%,transparent 68%)',ray:'Rayon d\'Émeraude — Guérison & Renouveau',virtue:'Santé · Équilibre · Vie',chakra:{sk:'विशुद्ध',name:'Gorge — Viśuddha',loc:'Centre de la gorge',petals:16,plabel:'16 pétales — Lotus de la Voix',elem:'Éther / Ākāsha (espace sonore)',mantra:'HAM — l\'espace de la parole',sense:'Ouïe / Expression / Communication',rgb:'94,234,212',meaning:'Viśuddha signifie "purification absolue". Ses seize pétales portent les seize voyelles du Sanskrit — toute la musique de la langue sacrée. Chaque parole consciente devient mantra. Raphaël guérit par la parole juste, le son qui rétablit l\'harmonie là où la discorde régnait. Viśuddha est la porte où le souffle (prāna) devient verbe divin.',bija:'⚕ Bija : HAM — la voix qui guérit et purifie'},link:'<strong>Raphaël</strong>, dont le nom signifie "El guérit", vibre avec Viśuddha — le chakra de la <strong>guérison par la parole juste</strong>. Dire la vérité à soi-même est le premier acte de guérison.',prayer:`<span class="invoc">Ô Raphaël · Viśuddha</span>Toi dont les seize pétales vibrent<br>aux fréquences de la guérison —<br><br><strong>purifie ma gorge et ma parole</strong>,<br>que je dise ce qui doit être dit<br>avec douceur mais sans mensonge.<br><br><strong>Que mon corps entende sa propre sagesse</strong>,<br>que chaque cellule reçoive<br>la vibration du mantra divin.`},
+{day:4,name:'Jeudi',angel:'Zadkiel',title:'Ange de la Grâce & du Pardon',glyph:'💜',symbol:'✦',color:'#A78BFA',rgb:'167,139,250',ov:'radial-gradient(ellipse at 50% 25%,rgba(167,139,250,.07) 0%,transparent 68%)',ray:'Rayon Violet — Transmutation & Grâce',virtue:'Pardon · Libération · Alchimie',chakra:{sk:'मणिपूर',name:'Plexus Solaire — Maṇipūra',loc:'Nombril / Plexus solaire',petals:10,plabel:'10 pétales — Lotus de Feu',elem:'Feu / Agni (feu transformateur)',mantra:'RAM — la flamme de la volonté',sense:'Vue / Pouvoir personnel / Volonté',rgb:'167,139,250',meaning:'Maṇipūra signifie "cité des joyaux rayonnants". Ses dix pétales portent volonté, transformation, confiance, clarté, vitalité, joie, spontanéité, curiosité, maîtrise de soi et détermination. C\'est le foyer du feu Agni qui transmute les expériences en sagesse et le karma en libération. Zadkiel partage cette puissance alchimique de convertir ce qui est lourd en lumière.',bija:'✦ Bija : RAM — le feu qui transforme sans détruire'},link:'<strong>Zadkiel</strong> et Maṇipūra partagent le même feu de l\'<strong>alchimie intérieure</strong>. Zadkiel allume la flamme violette qui dissout le karma comme Agni transmute les expériences en sagesse.',prayer:`<span class="invoc">Ô Zadkiel · Maṇipūra</span>Toi dont la flamme violette danse<br>au centre de mon pouvoir —<br><br><strong>consume ce que je n'ai plus besoin de porter</strong>,<br>rancœurs, peurs héritées,<br>chaînes confondues avec mon identité.<br><br><strong>Transmute tout cela en sagesse et en grâce</strong>,<br>que la cité de mes joyaux<br>brille de la vraie puissance.`},
+{day:5,name:'Vendredi',angel:'Jophiel',title:'Ange de la Beauté Sacrée',glyph:'🌼',symbol:'❀',color:'#FCD34D',rgb:'252,211,77',ov:'radial-gradient(ellipse at 50% 25%,rgba(252,211,77,.07) 0%,transparent 68%)',ray:'Rayon Doré-Rose — Beauté & Sagesse Créatrice',virtue:'Beauté · Art · Émerveillement',chakra:{sk:'स्वाधिष्ठान',name:'Sacré — Svādhiṣṭhāna',loc:'Bas-ventre / Os sacré',petals:6,plabel:'6 pétales — Lotus de la Création',elem:'Eau / Jala (flux et fluidité)',mantra:'VAM — le flux créateur',sense:'Goût / Plaisir / Créativité',rgb:'252,211,77',meaning:'Svādhiṣṭhāna signifie "demeure du Soi propre". Ses six pétales portent désir pur, émerveillement, joie, fluidité, adaptabilité et force vitale. C\'est le centre du mouvement et de la création artistique — l\'eau qui façonne les pierres. Jophiel, ange de la beauté, s\'éveille ici pour inspirer l\'artiste dans chaque âme.',bija:'❀ Bija : VAM — le flux qui donne naissance à des mondes'},link:'<strong>Jophiel</strong> vibre avec Svādhiṣṭhāna — tous deux célèbrent la <strong>création comme acte sacré</strong>. La beauté n\'est pas superficielle : elle est la forme visible de l\'amour divin.',prayer:`<span class="invoc">Ô Jophiel · Svādhiṣṭhāna</span>Toi dont les six pétales dansent<br>dans les eaux de la création —<br><br><strong>libère le courant créateur</strong> en moi,<br>que mes yeux voient la beauté<br>là où la fatigue a installé la grisaille.<br><br>Rappelle-moi que <strong>créer est une prière</strong>,<br>que chaque œuvre faite avec amour<br>traverse les mondes.`},
+{day:6,name:'Samedi',angel:'Uriel',title:'Flamme de la Sagesse Divine',glyph:'🔥',symbol:'△',color:'#FB923C',rgb:'251,146,60',ov:'radial-gradient(ellipse at 50% 25%,rgba(251,146,60,.07) 0%,transparent 68%)',ray:'Rayon de Feu — Sagesse & Fondation',virtue:'Ancrage · Sagesse · Présence',chakra:{sk:'मूलाधार',name:'Racine — Mūlādhāra',loc:'Base de la colonne vertébrale',petals:4,plabel:'4 pétales — Lotus des Racines',elem:'Terre / Pṛthivī (la mère tellurique)',mantra:'LAM — le son de la terre',sense:'Odorat / Survie / Ancrage',rgb:'251,146,60',meaning:'Mūlādhāra signifie "soutien fondamental". Ses quatre pétales portent Dharma, Artha, Kāma et Moksha — les quatre buts de l\'existence humaine. C\'est le siège de la Kuṇḍalinī Śakti, la force serpentine endormie qui, une fois éveillée, monte vers la Couronne unissant terre et ciel. Sans Mūlādhāra ancré, nulle ascension spirituelle n\'est durable.',bija:'△ Bija : LAM — la terre sacrée qui porte et libère'},link:'<strong>Uriel</strong>, dont le flambeau illumine les fondations, résonne avec Mūlādhāra — tous deux veillent sur les <strong>racines sacrées de l\'existence</strong>. La sagesse commence par les pieds enracinés dans la terre.',prayer:`<span class="invoc">Ô Uriel · Mūlādhāra</span>Toi dont le flambeau éclaire<br>les profondeurs de la terre —<br><br><strong>ancre mes racines dans le sol vivant</strong>,<br>que je sois autant poussière d'étoile<br>que chair et terre féconde.<br><br><strong>Éveille en douceur la Kundalini endormie</strong>,<br>que la force monte comme une flamme<br>de la racine jusqu'à la couronne.`}
+];
+
+// ===========================================================
+// DISCIPLINES D'ISIS — 7 Mystères
+// ===========================================================
+const ISIS=[
+{
+  id:0,
+  btn:'I · Magie Sacrée',
+  neter:'𓇋𓊪𓏏',emoji:'🌙',
+  num:'Premier Mystère',
+  name:'La Magie d\'Isis',
+  subtitle:'Heka — Le Verbe Créateur et la Puissance du Nom',
+  source:'Textes des Pyramides (Unas) · 2400 av. J.-C. — Papyrus de Turin',
+  cols:[
+    {l:'Nom Sacré (Égyptien)',v:'<em>Aset</em> — "Celle qui est le Trône"'},
+    {l:'Principe Ésotérique',v:'Heka : magie divine par le Verbe juste'},
+    {l:'Attributs Sacrés',v:'Le sceptre Ouadj · L\'Ankh · Le nœud Tyet'},
+    {l:'Gardien Cosmique',v:'Déesse des étoiles — Sothis (Sirius)'}
+  ],
+  esoterique:`<span class="isis-invoc">𓂀 Heka — Le Verbe qui Crée 𓂀</span>
+Isis tient la <strong>connaissance secrète des Noms divins</strong>,<br>car dans la tradition des Medu Neter — les Paroles Divines —<br>connaître le Nom véritable d'un être,<br>c'est tenir sa puissance dans les paumes.<br><br>
+Elle arracha le Nom caché de Rê lui-même<br>en créant un serpent de poussière solaire<br>qui le mordit pendant son voyage nocturne.<br>
+<strong>Ainsi Isis devint plus puissante que les dieux</strong><br>— non par force, mais par la Connaissance.`,
+  papyrus:'Je suis Isis, plus grande en magie que tous les dieux et que tous les morts. Je suis celle dont le nom secret nul ne connaît, sauf moi seule.',
+  psource:'Hymne à Isis — Papyrus de Boulaq · XVIIIe Dynastie',
+  pratique:'<strong>Discipline des Noms Sacrés :</strong> Dans la tradition initiatique d\'Isis, l\'initié apprend à ne jamais prononcer le Nom divin dans le vide. Chaque mot est une semence. Chaque pensée formulée est un acte magique. La pratique consiste à garder un silence sacré (le <em>sékhemu</em>) pendant la première heure du matin, avant que la parole ne soit prononcée — pour ne pas disperser l\'énergie de création. La prière d\'Isis se récite à l\'heure de Sothis, quand Sirius apparaît à l\'horizon.',
+  hiero:'𓇋𓊪𓏏 𓂀 𓋴𓆑𓏏 𓅓𓂧𓂧𓅱'
+},
+{
+  id:1,
+  btn:'II · Art de la Résurrection',
+  neter:'𓁹',emoji:'⚱️',
+  num:'Deuxième Mystère',
+  name:'La Résurrection d\'Osiris',
+  subtitle:'Djed — Le Pilier de l\'Éternité et l\'Art de Rassembler les Fragments',
+  source:'Textes des Cercueils · Livre des Morts (Papyrus d\'Ani) · 1250 av. J.-C.',
+  cols:[
+    {l:'Acte Fondateur',v:'Rassemblement des 14 membres d\'Osiris'},
+    {l:'Principe Ésotérique',v:'L\'âme ne meurt jamais — elle se rassemble'},
+    {l:'Symbole Initiatique',v:'Le Pilier Djed — colonne vertébrale cosmique'},
+    {l:'Puissance Sacrée',v:'Isis insuffle le souffle Shou pour ressusciter'}
+  ],
+  esoterique:`<span class="isis-invoc">𓁹 Djed — Le Pilier de l\'Éternité 𓁹</span>
+Quand Seth dispersa les <strong>quatorze fragments d\'Osiris</strong><br>aux quatre coins de la terre et du Nil,<br>Isis prit la forme d\'un faucon<br>et parcourut le monde entier<br>pour rassembler ce qui avait été brisé.<br><br>
+<strong>Elle retrouva treize membres — sauf le phallus sacré</strong>,<br>englouti par l\'abîme des eaux primordiales.<br>
+Elle en créa un d\'or et d\'encens,<br>insuffla son souffle de vie<br>et conçut ainsi Horus, l\'Héritier cosmique.`,
+  papyrus:'Je suis venu te chercher, ô Osiris. Je suis ta sœur Isis, qui t\'aime plus que toutes les femmes. Je t\'apporte le souffle de la vie pour que tu te lèves.',
+  psource:'Textes des Pyramides — Utt. 366 · Saqqarah · 2350 av. J.-C.',
+  pratique:'<strong>Discipline de Rassemblement :</strong> L\'enseignement ésotérique d\'Isis enseigne que chaque être humain porte en lui des "fragments" dispersés — des aspects de lui-même qu\'il a niés, blessés, ou abandonnés. La pratique initiatique consiste en un travail de <em>semaju</em> (rassemblement des âmes) : reconnaître et accueillir les parties rejetées de soi. Isis est l\'archétype de la thérapeute de l\'âme qui ne juge pas les fragments mais les rassemble avec amour.',
+  hiero:'𓁹 𓇋𓊪𓏏 𓅱𓋴𓋴𓋴 𓊪𓏏𓂋'
+},
+{
+  id:2,
+  btn:'III · Alchimie des Plantes',
+  neter:'𓇾',emoji:'🌿',
+  num:'Troisième Mystère',
+  name:'La Pharmacopée Sacrée',
+  subtitle:'Per Ankh — La Maison de Vie et les Plantes de Lumière',
+  source:'Papyrus Ebers (1550 av. J.-C.) · Papyrus Edwin Smith · Temple de Philae',
+  cols:[
+    {l:'Lieu Sacré',v:'Per Ankh — "La Maison de Vie" (bibliothèque sacrée)'},
+    {l:'Art Transmis',v:'Herboristerie magico-spirituelle égyptienne'},
+    {l:'Plantes Sacrées',v:'Lotus bleu · Sycomore sacré · Papyrus · Myrrhe'},
+    {l:'Principe',v:'La plante est un être conscient porteur de neter'}
+  ],
+  esoterique:`<span class="isis-invoc">𓇾 Per Ankh — La Maison de Vie 𓇾</span>
+Isis est la première des <strong>prêtresses-guérisseuses</strong>,<br>maîtresse du Per Ankh,<br>la Maison de Vie où étaient gardés<br>les secrets des plantes sacrées<br>et les formules magiques de guérison.<br><br>
+Elle enseigna que <strong>chaque plante est un hiéroglyphe vivant</strong><br>— une parole divine manifestée en matière.<br>
+Le lotus bleu ouvre la conscience.<br>
+La myrrhe protège le passage entre les mondes.<br>
+Le sycomore sacré nourrit les âmes des morts.`,
+  papyrus:'Isis dit : Je connais les herbes qui guérissent les serpents, les plantes qui ouvrent les portes de l\'invisible. Je suis celle qui tient le Per Ankh — la maison où la vie et la mort s\'enseignent ensemble.',
+  psource:'Texte magique du Papyrus de Leyde — IIIe siècle av. J.-C.',
+  pratique:'<strong>Discipline des Plantes Vivantes :</strong> Dans les temples d\'Isis, les initiés apprenaient la <em>kenbet</em> — la communion avec les plantes sacrées. Avant de cueillir une plante médicinale, le prêtre ou la prêtresse récitait une formule d\'invocation pour honorer le Neter (divinité) présent dans la plante. La maison de vie comportait des jardins sacrés où le lotus bleu (Nymphaea caerulea), symbole de renaissance, était cultivé avec des rituels quotidiens à l\'aube.',
+  hiero:'𓇾 𓉐𓂋 𓋴 𓏌𓈖𓎡𓂋'
+},
+{
+  id:3,
+  btn:'IV · Navigation des Âmes',
+  neter:'𓇳',emoji:'⛵',
+  num:'Quatrième Mystère',
+  name:'La Navigation de la Douat',
+  subtitle:'Amdouat — Le Voyage de l\'Âme à Travers les Douze Heures de la Nuit',
+  source:'Amdouat (Livre de ce qui est dans l\'au-delà) · Livre des Portes · XVIIIe Dyn.',
+  cols:[
+    {l:'Territoire',v:'La Douat — royaume de l\'au-delà égyptien'},
+    {l:'Durée du Voyage',v:'12 heures nocturnes — 12 étapes initiatiques'},
+    {l:'Gardien',v:'Isis guide la barque solaire de Rê dans les ténèbres'},
+    {l:'Épreuve Centrale',v:'Pesée du cœur devant Osiris et les 42 juges'}
+  ],
+  esoterique:`<span class="isis-invoc">𓇳 Amdouat — Le Chemin d\'Éternité 𓇳</span>
+Chaque nuit, le soleil Rê traverse la Douat —<br>les Douze Heures des ténèbres —<br>accompagné d\'Isis qui tient la barque<br>sur les eaux primordiales du Noun.<br><br>
+<strong>Cet enseignement secret révèle que la mort n\'est pas une fin</strong><br>mais une transformation en douze étapes.<br>
+L\'âme (le <em>Ba</em>, représenté par l\'oiseau-faucon à tête humaine)<br>traverse les portes gardées par des serpents,<br>récite les formules magiques qu\'Isis lui a appris<br>— et renaît avec le soleil à l\'aube.`,
+  papyrus:'Ne crains point les ténèbres, car Isis marche devant toi et tient la lumière. Chaque porte s\'ouvrira si tu connais son nom. Je suis ta mère, ta sœur et ton guide — je ne t\'abandonnerai pas dans la Douat.',
+  psource:'Livre des Morts — Chapitre XVII · Papyrus de Hunefer · 1280 av. J.-C.',
+  pratique:'<strong>Discipline des Douze Portes :</strong> L\'initiation au Mystère de la Douat se fait à travers le rêve dirigé et la méditation nocturne. L\'initiée apprend à voyager consciemment pendant le sommeil (le <em>Kheper</em> — la métamorphose nocturne). Avant de dormir, elle récite les noms des douze portes, demandant à Isis de la guider. Chaque porte correspond à une peur à traverser : la peur de l\'abandon, de la mort, de l\'obscurité intérieure. L\'initiation complète prend douze nuits.',
+  hiero:'𓇳 𓂧𓅱𓈖𓇼𓏏 𓊪𓋴𓇋𓏏'
+},
+{
+  id:4,
+  btn:'V · Les Sept Scorpions',
+  neter:'𓆓',emoji:'🦂',
+  num:'Cinquième Mystère',
+  name:'L\'Art de la Protection',
+  subtitle:'Sa — Le Bouclier d\'Isis et les Sept Noms Protecteurs',
+  source:'Papyrus Métternich · IVe siècle av. J.-C. — Le Conte des Sept Scorpions',
+  cols:[
+    {l:'Les Sept Gardiennes',v:'Tefen, Befen, Mestet, Mestetef, Petet, Thetet, Maatet'},
+    {l:'Symbole de Protection',v:'Le nœud Tyet (sang d\'Isis) — amulette suprême'},
+    {l:'Formule Sacrée',v:'Les Heka (formules magiques) des Stèles d\'Horus'},
+    {l:'Principe',v:'L\'amour maternel d\'Isis est plus fort que tout venin'}
+  ],
+  esoterique:`<span class="isis-invoc">𓆓 Sa — Le Bouclier Sacré 𓆓</span>
+Quand Isis fuyait avec le jeune Horus<br>à travers les marais du Delta,<br><strong>sept scorpions l\'accompagnaient comme gardiennes</strong>,<br>portant chacune un nom secret de pouvoir.<br><br>
+Quand Horus fut piqué par le scorpion traître Apep,<br>Isis arrêta la barque solaire de Rê dans le ciel<br>— immobilisant le temps lui-même —<br>et récita les <strong>formules de vie</strong><br>qui arrachèrent son fils à la mort.<br>
+Ainsi elle enseigna : <em>l\'amour est plus puissant que le poison</em>.`,
+  papyrus:'Je suis Isis. Je viens te sauver. Je suis ta mère, et ma magie est plus forte que toute mort. Viens à moi, car les mots que je porte ont été tissés avant la création du monde.',
+  psource:'Papyrus Métternich — Stèle d\'Horus sur les Crocodiles · 380 av. J.-C.',
+  pratique:'<strong>Discipline de Protection Sacrée :</strong> L\'enseignement initiatique des Sept Scorpions révèle que la vraie protection ne vient pas de la force mais de l\'<em>amour ancré dans la connaissance</em>. La prêtresse d\'Isis apprenait les Sept Formules de Protection (une par scorpion-gardienne) et confectionnait le nœud Tyet — amulette taillée en jaspe rouge, portée sur le cœur. Le rituel quotidien consistait à "sceller" les entrées de la maison avec l\'huile de myrrhe et la fumée de kyphi (encens sacré des temples) en récitant le nom des sept gardiennes.',
+  hiero:'𓆓 𓋴𓈖 𓇋𓊪𓏏 𓅱𓋴𓋴'
+},
+{
+  id:5,
+  btn:'VI · Les Lamentations',
+  neter:'𓂻',emoji:'🕊️',
+  num:'Sixième Mystère',
+  name:'Les Lamentations d\'Isis et Nephthys',
+  subtitle:'Qebet — Le Chant de Deuil qui Ressuscite les Morts',
+  source:'Rituel des Lamentations d\'Abydos · Papyrus de Berlin 3008 · 300 av. J.-C.',
+  cols:[
+    {l:'Les Deux Sœurs',v:'Isis (au nord) et Nephthys (au sud) d\'Osiris'},
+    {l:'Durée du Rituel',v:'Quatre jours de lamentation rituelle sacrée'},
+    {l:'Puissance du Deuil',v:'Le deuil exprimé libère le Ka (énergie vitale)'},
+    {l:'Symbole',v:'Les deux kites (milans) — oiseaux de la résurrection'}
+  ],
+  esoterique:`<span class="isis-invoc">𓂻 Qebet — Le Deuil qui Rend Vivant 𓂻</span>
+Isis et sa sœur Nephthys<br>se plaçaient aux deux extrémités du corps d\'Osiris,<br>tête et pieds, nord et sud —<br>et durant quatre jours et quatre nuits,<br><strong>elles chantaient les Lamentations sacrées</strong>.<br><br>
+Cet enseignement secret révèle que <strong>le deuil pleinement vécu est une magie de résurrection</strong>.<br>
+Les larmes d\'Isis sont les crues du Nil.<br>
+Son chant de deuil est le son qui redonne vie.<br>
+Nephthys, gardienne de l\'invisible, complète ce qu\'Isis amorce.`,
+  papyrus:'Viens à nous, ô Osiris ! Ta sœur Isis et ta sœur Nephthys te cherchent, pleurent pour toi, te pleurent par amour. Ton âme vit, ton cœur est victorieux. Lève-toi — car ton nom demeure.',
+  psource:'Lamentations d\'Isis et Nephthys — Papyrus de Berlin 3008 · Époque ptolémaïque',
+  pratique:'<strong>Discipline des Lamentations Sacrées :</strong> Dans les temples d\'Osiris à Abydos, des prêtresses formées au rituel des Qebet récitaient les Lamentations lors des grandes fêtes. L\'enseignement ésotérique révèle que le deuil non exprimé bloque le Ka (énergie vitale). La pratique initiatique consiste à honorer ses pertes — personnes, rêves, identités passées — par un rituel de lamentation consciente : écrire les noms de ce qu\'on a perdu, les brûler avec de l\'encens de myrrhe, et confier les cendres à l\'eau courante.',
+  hiero:'𓂻 𓇋𓊪𓏏 𓈖𓆓𓏏𓂋 𓊪𓋴𓇋𓏏'
+},
+{
+  id:6,
+  btn:'VII · L\'Initiation Suprême',
+  neter:'𓋹',emoji:'☀️',
+  num:'Septième Mystère',
+  name:'L\'Initiation au Trône d\'Isis',
+  subtitle:'Mestekh — La Transformation en Neter et le Retour à la Source',
+  source:'Apulée — Métamorphoses (Livre XI) · Rites d\'Initiation de Philae · Mystères d\'Éleusis',
+  cols:[
+    {l:'Le Trône Sacré',v:'Isis EST le Trône — l\'initié s\'assoit dans sa lumière'},
+    {l:'Étapes de l\'Initiation',v:'Purification · Mort symbolique · Rebirth en dieu'},
+    {l:'Durée',v:'Trois jours de mort initiatique dans le sanctuaire'},
+    {l:'Révélation',v:'L\'initié "voit le soleil briller à minuit" — Apulée'}
+  ],
+  esoterique:`<span class="isis-invoc">𓋹 Ankh — La Vie Éternelle Révélée 𓋹</span>
+Le septième et ultime mystère d\'Isis<br>est le Mystère de l\'Initiation suprême.<br>
+L\'initié entre dans le sanctuaire la nuit,<br>il est "mis à mort" symboliquement,<br>traverse la Douat conscient —<br><strong>et renaît comme un dieu (Neter)</strong>.<br><br>
+Apulée, initié aux Mystères d\'Isis au IIe siècle,<br>décrit : <em>"J\'ai approché la frontière de la mort,<br>j\'ai vu le soleil briller à minuit de sa pleine lumière,<br>je me suis approché des dieux d\'en bas et d\'en haut<br>et les ai adorés face à face."</em><br><br>
+<strong>Isis EST le Trône (Aset).</strong><br>
+S\'initier à ses mystères, c\'est s\'asseoir sur ce Trône<br>— devenir soi-même une assise pour le Divin.`,
+  papyrus:'Je suis tout ce qui a été, ce qui est et ce qui sera. Nul mortel n\'a levé mon voile. Le fruit que j\'ai engendré est le Soleil. Je suis la Mère de toute nature. Tout ce qui existe sous le ciel vient de moi.',
+  psource:'Inscription sur la statue d\'Isis à Saïs — Plutarque, De Iside et Osiride · IIe s.',
+  pratique:'<strong>Discipline de l\'Initiation Suprême :</strong> La tradition ésotérique des temples d\'Isis à Philae et Dendéra enseignait l\'initiation en trois degrés. Le premier : la purification par le jeûne, les bains rituels dans le Nil et le port du lin blanc (couleur de l\'éternité). Le deuxième : la mort symbolique — rester seul dans la chambre la plus profonde du temple pendant trois jours, sans lumière. Le troisième : la renaissance — l\'initié ressort vêtu des douze stoles des douze étoiles, couronné du soleil, tenant les torches de la vie et de la mort. Il est devenu une image vivante d\'Osiris ressuscité.',
+  hiero:'𓋹 𓇋𓊪𓏏 𓏠𓈖 𓂧𓇋𓅱𓏏'
+}
+];
+
+// ===========================================================
+// CANVAS ÉTOILES
+// ===========================================================
+const bgc=document.getElementById('bgc'),ctx=bgc.getContext('2d');
+let stars=[];
+function initC(){bgc.width=window.innerWidth;bgc.height=window.innerHeight;stars=Array.from({length:250},()=>({x:Math.random()*bgc.width,y:Math.random()*bgc.height,r:Math.random()*1.1+.15,a:Math.random()*.5+.1,sp:Math.random()*.005+.001,ph:Math.random()*Math.PI*2}));}
+initC();window.addEventListener('resize',initC);
+function animS(){ctx.clearRect(0,0,bgc.width,bgc.height);const t=Date.now()*.001;stars.forEach(s=>{const a=s.a*(0.4+0.6*Math.sin(t*s.sp*80+s.ph));ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,248,220,${a})`;ctx.fill();});requestAnimationFrame(animS);}
+animS();
+
+// CURSEUR
+const cur=document.getElementById('cur'),crg=document.getElementById('crg');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';crg.style.left=e.clientX+'px';crg.style.top=e.clientY+'px';});
+
+// ===========================================================
+// ONGLETS
+// ===========================================================
+function switchTab(t){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+t).classList.add('active');
+  document.querySelector('.tab-'+t).classList.add('active');
+  if(t==='chakra'){
+    cur.style.background='';cur.style.boxShadow='';
+    document.getElementById('dov').style.background='';
+  } else if(t==='isis'){
+    cur.style.background='#C8A45A';cur.style.boxShadow='0 0 12px #C8A45A,0 0 24px rgba(200,164,90,.4)';
+    document.getElementById('dov').style.background='radial-gradient(ellipse at 50% 20%,rgba(139,105,20,.07) 0%,transparent 65%)';
+  } else if(t==='ker'){
+    cur.style.background='#B87FE0';cur.style.boxShadow='0 0 12px #B87FE0,0 0 24px rgba(160,100,220,.4)';
+    document.getElementById('dov').style.background='radial-gradient(ellipse at 50% 20%,rgba(100,60,160,.09) 0%,transparent 65%)';
+  } else if(t==='zep'){
+    cur.style.background='#2DD4BF';cur.style.boxShadow='0 0 12px #2DD4BF,0 0 24px rgba(45,212,191,.4)';
+    document.getElementById('dov').style.background='radial-gradient(ellipse at 50% 20%,rgba(13,77,92,.1) 0%,transparent 65%)';
+  }
+}
+// ===========================================================
+function buildLotus(petals,rgb){
+  const el=document.getElementById('lotus');el.innerHTML='';
+  const n=Math.min(petals,14);
+  for(let i=0;i<n;i++){const p=document.createElement('div');p.className='lp';const ang=(i/n)*360,dist=18;p.style.cssText=`width:10px;height:17px;background:rgba(${rgb},.45);transform:translate(-50%,-100%) rotate(${ang}deg) translateY(-${dist}px);box-shadow:0 0 6px rgba(${rgb},.35);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;`;el.appendChild(p);}
+  const c=document.createElement('div');c.className='lc';c.style.cssText=`background:radial-gradient(circle,rgba(${rgb},.9),rgba(${rgb},.3));box-shadow:0 0 12px rgba(${rgb},.6),0 0 24px rgba(${rgb},.2);`;el.appendChild(c);
+}
+function spawnP(rgb){
+  document.querySelectorAll('.particle').forEach(p=>p.remove());
+  for(let i=0;i<14;i++){const p=document.createElement('div');p.className='particle';const dx=(Math.random()-.5)*250,sz=Math.random()*2+.5;p.style.cssText=`left:${Math.random()*100}%;--dx:${dx}px;width:${sz}px;height:${sz}px;background:rgba(${rgb},${Math.random()*.4+.2});box-shadow:0 0 ${sz*4}px rgba(${rgb},.5);animation-duration:${12+Math.random()*12}s;animation-delay:${Math.random()*8}s;`;document.body.appendChild(p);}
+}
+const nav=document.getElementById('dnav');
+D.forEach((d,i)=>{const b=document.createElement('button');b.className='dbtn';b.id='db'+i;b.innerHTML=`<span class="dlotus">${d.glyph}</span><span class="dname">${d.name}</span><span class="dang">${d.angel}</span>`;b.style.color=d.color;b.addEventListener('click',()=>sel(i));nav.appendChild(b);});
+
+let cDay=new Date().getDay();
+function renderC(idx){
+  const d=D[idx],c=d.chakra;
+  document.getElementById('dov').style.background=d.ov;
+  document.getElementById('hl').style.background=`linear-gradient(90deg,transparent,${d.color},transparent)`;
+  cur.style.background=d.color;cur.style.boxShadow=`0 0 10px ${d.color},0 0 20px rgba(${d.rgb},.4)`;
+  crg.style.borderColor=`rgba(${d.rgb},.3)`;
+  ['otl','otr','obl','obr'].forEach(id=>document.getElementById(id).style.borderColor=`rgba(${d.rgb},.35)`);
+  document.getElementById('ts').style.background=`linear-gradient(90deg,transparent,rgba(${d.rgb},.5),transparent)`;
+  document.getElementById('mday').textContent=`✦  ${d.name}  ✦`;
+  const ma=document.getElementById('mang');ma.textContent=d.angel;ma.style.color=d.color;ma.style.textShadow=`0 0 36px rgba(${d.rgb},.5)`;
+  document.getElementById('mtit').textContent=d.title;
+  const fs=document.getElementById('fsym');fs.textContent=d.symbol;fs.style.color=d.color;fs.style.filter=`drop-shadow(0 0 12px ${d.color}) drop-shadow(0 0 28px rgba(${d.rgb},.4))`;
+  ['sd1','sd2'].forEach(id=>{const el=document.getElementById(id);el.style.background=d.color;el.style.boxShadow=`0 0 8px ${d.color}`;});
+  buildLotus(c.petals,c.rgb||d.rgb);
+  document.getElementById('lcount').textContent=c.plabel;
+  const sk=document.getElementById('sk');sk.textContent=c.sk;sk.style.color=d.color;
+  const cn=document.getElementById('cn');cn.textContent=c.name;cn.style.color=d.color;
+  document.getElementById('cl').textContent='📍 '+c.loc;
+  document.getElementById('pe').textContent=c.elem;
+  document.getElementById('pm').innerHTML='<em>'+c.mantra+'</em>';
+  document.getElementById('pp').textContent=c.petals+' pétales sacrés';
+  document.getElementById('ps').textContent=c.sense;
+  document.getElementById('cm').textContent=c.meaning;
+  const bj=document.getElementById('bj');bj.textContent=c.bija;bj.style.color=`rgba(${d.rgb},.65)`;bj.style.borderColor=`rgba(${d.rgb},.2)`;
+  document.getElementById('chkb').style.borderColor=`rgba(${d.rgb},.12)`;
+  document.getElementById('chkt').style.background=`linear-gradient(90deg,transparent,rgba(${d.rgb},.4),transparent)`;
+  const al=document.getElementById('al');al.style.borderLeftColor=`rgba(${d.rgb},.4)`;al.style.background=`rgba(${d.rgb},.025)`;
+  document.getElementById('alt').innerHTML=d.link;
+  document.querySelectorAll('#alt strong').forEach(el=>el.style.color=d.color);
+  document.getElementById('pt').innerHTML=d.prayer;
+  document.querySelectorAll('.ptext strong').forEach(el=>el.style.color=d.color);
+  document.getElementById('vv').textContent=d.virtue;document.getElementById('vv').style.color=d.color;
+  document.getElementById('vb').style.borderColor=`rgba(${d.rgb},.1)`;
+  const rb=document.getElementById('rb');rb.textContent='☀ '+d.ray;rb.style.color=`rgba(${d.rgb},.55)`;rb.style.borderColor=`rgba(${d.rgb},.1)`;
+  document.getElementById('ni').textContent=`${d.name} · ${d.angel} · ${c.name.split('—')[0].trim()}`;
+  document.querySelectorAll('.dbtn').forEach((b,i)=>b.classList.toggle('active',i===idx));
+  spawnP(d.rgb);
+  const pc=document.getElementById('pc');pc.style.animation='none';pc.offsetHeight;pc.style.animation='rev .7s ease forwards';
+}
+function sel(i){cDay=((i%7)+7)%7;renderC(cDay);}
+function chDay(d){sel(cDay+d);}
+renderC(cDay);
+
+// ===========================================================
+// ISIS RENDER
+// ===========================================================
+const discNav=document.getElementById('disc-nav');
+const isisContent=document.getElementById('isis-content');
+
+ISIS.forEach((d,i)=>{
+  // Nav button
+  const b=document.createElement('button');
+  b.className='disc-btn'+(i===0?' active':'');
+  b.id='discb'+i;b.textContent=d.btn;
+  b.addEventListener('click',()=>renderIsis(i));
+  discNav.appendChild(b);
+
+  // Panel
+  const p=document.createElement('div');
+  p.className='disc-panel'+(i===0?' active':'');
+  p.id='disc'+i;
+  p.innerHTML=`
+    <div class="isis-frame">
+      <div class="iorn tl"></div><div class="iorn tr"></div>
+      <div class="iorn bl"></div><div class="iorn br"></div>
+      <div class="disc-head">
+        <span class="disc-neter">${d.emoji}</span>
+        <div class="disc-hiero">${d.neter}</div>
+        <div class="disc-num">${d.num}</div>
+        <div class="disc-name">${d.name}</div>
+        <div class="disc-subtitle">${d.subtitle}</div>
+      </div>
+      <div class="source-badge">
+        <span class="source-icon">📜</span>
+        <span class="source-text">${d.source}</span>
+      </div>
+      <div class="disc-cols">
+        ${d.cols.map(c=>`<div class="disc-col"><div class="col-label">${c.l}</div><div class="col-val">${c.v}</div></div>`).join('')}
+      </div>
+      <div class="isis-sep"><div class="isis-sl"></div><span class="isis-sd">𓂀</span><div class="isis-sl"></div></div>
+      <div class="esoterique">${d.esoterique}</div>
+      <div class="papyrus-cite">
+        <p class="papyrus-text">${d.papyrus}</p>
+        <div class="papyrus-source">— ${d.psource}</div>
+      </div>
+      <div class="isis-sep"><div class="isis-sl"></div><span class="isis-sd">𓋹</span><div class="isis-sl"></div></div>
+      <div class="pratique-box">
+        <div class="pratique-label">𓇋 Pratique Initiatique — Discipline Sacrée</div>
+        <p class="pratique-text">${d.pratique}</p>
+      </div>
+      <div class="hiero-row">${d.hiero}</div>
+    </div>
+  `;
+  isisContent.appendChild(p);
+});
+
+let cIsis=0;
+function renderIsis(idx){
+  cIsis=idx;
+  document.querySelectorAll('.disc-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.disc-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('disc'+idx).classList.add('active');
+  document.getElementById('discb'+idx).classList.add('active');
+  document.getElementById('disc'+idx).scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+document.addEventListener('keydown',e=>{
+  const isIsis=document.getElementById('page-isis').classList.contains('active');
+  if(isIsis){
+    if(e.key==='ArrowRight'||e.key==='ArrowDown')renderIsis((cIsis+1)%7);
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp')renderIsis((cIsis+6)%7);
+  } else {
+    if(e.key==='ArrowRight'||e.key==='ArrowDown')chDay(1);
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp')chDay(-1);
+  }
+});
+
+// ===========================================================
+// KER SESHETA DATA
+// ===========================================================
+const KER=[
+{
+  id:0, btn:'I · Qu\'est-ce que Ker Sesheta',
+  neter:'𓇽', emoji:'🌑',
+  num:'Fondement Premier',
+  name:'Ker Sesheta',
+  sub:'La Chambre des Mystères Cachés — Sanctuaire de l\'Inexprimable',
+  source:'Textes des Pyramides · Papyrus d\'Ani · Temple d\'Abydos · Livre de l\'Amdouat',
+  grid:[
+    {l:'Étymologie Sacrée', v:'<em>Ker</em> = "Ce qui est en dessous / le fond caché" · <em>Sesheta</em> = "La Cachée, la Secrète"'},
+    {l:'Lieu Cosmique', v:'Chambre la plus profonde de la Douat — là où Osiris siège dans l\'obscurité absolue'},
+    {l:'Gardienne', v:'Sesheta-Maat — La Déesse des Secrets Sacrés et de la Mesure divine'},
+    {l:'Accès', v:'Réservé aux initiés du quatrième degré — les Sem-Priests et les Kher-Heb (prêtres lecteurs)'}
+  ],
+  esot:`<span class="ker-invoc">𓇽 Ker Sesheta — Ce qui ne peut être vu que dans l'obscurité 𓇽</span>
+Ker Sesheta est le <strong>Sanctuaire Ultime</strong> —<br>la chambre la plus profonde sous les temples,<br>là où la lumière n'entre jamais.<br><br>
+Dans la tradition ésotérique égyptienne,<br>la vérité la plus haute ne se trouve pas dans la lumière —<br>elle se cache dans l'<strong>obscurité sacrée du Sein primordial</strong>,<br>le Noun originel d'où tout a jailli.<br><br>
+Ker Sesheta est à la fois un lieu physique<br>(la chambre funéraire la plus profonde des tombeaux royaux)<br>et un <strong>état de conscience</strong> :<br>le point de silence absolu<br>où l'âme rencontre sa propre éternité.`,
+  cite:`Tu entres dans Ker Sesheta, tu connais les secrets de la Douat. Tu n'es plus parmi les vivants ni parmi les morts — tu es dans la Chambre du Milieu, là où le temps s'est arrêté avant le premier battement du cœur du monde.`,
+  csrc:'Textes des Pyramides — Utt. 670 · Chambre de Pépi II · Saqqarah',
+  principes:[
+    {n:'01',nom:'Le Principe du Voile',txt:'<span class="p-sub">Sesheta — La Déesse du Voile</span>Tout enseignement ésotérique est structuré en <strong>cercles concentriques de révélation</strong>. La vérité extérieure (exotérique) est donnée au peuple. La vérité intérieure (ésotérique) est réservée aux initiés. Ker Sesheta enseigne que le voile n\'est pas un obstacle — c\'est une <strong>protection</strong>. Les vérités trop puissantes détruiraient celui qui n\'est pas prêt à les recevoir.'},
+    {n:'02',nom:'Le Principe du Noun',txt:'<span class="p-sub">Noun — Les Eaux Primordiales Avant la Création</span>Le Noun est l\'<strong>océan d\'obscurité infinie</strong> qui existait avant que Rê (le soleil) ne s\'éveille. Ce n\'est pas le néant — c\'est la plénitude de tout ce qui n\'est pas encore manifesté. L\'initié de Ker Sesheta apprend à plonger dans le Noun — à tolérer l\'absence de forme — pour recevoir les possibilités non encore nées.'},
+    {n:'03',nom:'Le Principe de Maat',txt:'<span class="p-sub">Maat — La Loi Cosmique qui Tient Tout</span><strong>Maat n\'est pas une déesse de la justice humaine</strong> — elle est la <em>structure vibratoire de l\'univers lui-même</em>. Sans Maat, le soleil cesse de se lever. Sans Maat, les étoiles perdent leur chemin. Maat inclut : la Vérité (Ma-a), la Justice (Djed-et), l\'Harmonie (Hetep), l\'Ordre cosmique (Sema). L\'initié doit incarner Maat avant d\'entrer dans Ker Sesheta.'},
+    {n:'04',nom:'Le Principe des Noms Cachés',txt:'<span class="p-sub">Ren — Le Nom Véritable qui ne Meurt Pas</span>Chaque être possède <strong>trois noms</strong> : le nom public (Ren Aa — le grand nom), le nom intime (Ren Nedjes — le petit nom), et le <strong>Nom Caché (Ren Imen)</strong> — connu de l\'âme seule. Dans Ker Sesheta, l\'initié découvre son Nom Caché : l\'expression divine qu\'il est venu incarner dans cette vie. Ce nom ne peut être enseigné — il se révèle dans le silence absolu.'}
+  ],
+  pratique:'<strong>La Porte de Ker Sesheta</strong> s\'ouvre par l\'obscurité consciente. Assis dans le noir complet, yeux ouverts, l\'initié récite : <em>"Je suis dans le Noun. Je suis avant la création. Je suis la possibilité de tout."</em> Cette pratique s\'appelle <strong>Kheper em Khat</strong> — devenir dans le corps. Elle se pratique 40 nuits consécutives, toujours à la même heure (idéalement 3h du matin — l\'heure des portes entre les mondes). La chambre doit être parfaitement silencieuse, parfaitement obscure, imprégnée d\'encens de <em>kyphi</em>.',
+  hiero:'𓇽 𓎡𓂋 𓋴𓆓𓏏𓈖 𓂧𓅱𓈖𓇼'
+},
+{
+  id:1, btn:'II · Les 42 Lois de Maat',
+  neter:'⚖️', emoji:'🪶',
+  num:'Deuxième Principe',
+  name:'Les 42 Lois de Maat',
+  sub:'Medu Maat — Le Code Cosmique de l\'Âme Juste',
+  source:'Livre des Morts — Chapitres 125 & 30 · Papyrus de Hunefer · 1280 av. J.-C.',
+  grid:[
+    {l:'Nombre Sacré', v:'42 lois = 42 Assesseurs divins dans la Salle du Double Maat'},
+    {l:'Structure', v:'Chaque loi est une <em>confession négative</em> : "Je n\'ai pas..."'},
+    {l:'Pesée du Cœur', v:'Le cœur (Ib) pesé contre la plume de Maat — si égal : libération'},
+    {l:'Lieu du Jugement', v:'La Salle du Double Maat (Iaret en Maat) au cœur de la Douat'}
+  ],
+  esot:`<span class="ker-invoc">⚖️ Maat — La Plume et le Cœur ⚖️</span>
+Quand l'âme (le Ba) quitte le corps,<br>elle est conduite dans la <strong>Salle du Double Maat</strong>.<br>
+Là, son cœur est placé sur la balance —<br>en face : la plume de Maat, légère comme un souffle.<br><br>
+<strong>Si le cœur est plus lourd que la plume</strong> (alourdi par les transgressions non assumées),<br>Ammit — la Dévoreuse — le consume.<br>
+Si le cœur est aussi léger que la plume,<br>l'âme est déclarée <em>Maa-Kheru</em> — <strong>Juste de Voix</strong> —<br>et entre dans les Champs d'Ialou (le paradis égyptien).`,
+  cite:`Salut à toi, Osiris, Seigneur de l'Éternité ! Je suis venu devant toi. Je t'apporte la Maat. Je me suis purifié de ma propre souillure. Je n'ai opprimé personne. Je n'ai pas réduit les mesures. Je n'ai pas volé le pain des dieux. Mon cœur est pur. Mon nom est pur.`,
+  csrc:'Déclaration d\'Innocence — Papyrus d\'Ani · Chapitre 125 · 1250 av. J.-C.',
+  principes:[
+    {n:'01',nom:'Les 7 premières Lois — Corps',txt:'<span class="p-sub">Je n\'ai pas tué · Je n\'ai pas volé · Je n\'ai pas menti</span><strong>Les premières lois concernent les actes du corps</strong> : ne pas tuer, ne pas voler, ne pas commettre d\'adultère, ne pas mutiler, ne pas profaner les lieux sacrés, ne pas s\'approprier les terres d\'autrui, ne pas falsifier les poids et mesures. Ces lois forment le socle de tout édifice spirituel — sans maîtrise du corps, l\'initiation de l\'âme est impossible.'},
+    {n:'02',nom:'Les 14 Lois suivantes — Parole',txt:'<span class="p-sub">Je n\'ai pas calomnié · Je n\'ai pas élevé la voix</span><strong>La parole est magie (Heka)</strong> — chaque mot prononcé crée une réalité. Ces lois régissent la bouche : ne pas calomnier, ne pas mentir aux dieux, ne pas proférer de blasphèmes, ne pas user de mots pour blesser, ne pas répandre la discorde. La bouche pure est le premier temple.'},
+    {n:'03',nom:'Les 21 dernières Lois — Pensée et Âme',txt:'<span class="p-sub">Je n\'ai pas convoité · Je n\'ai pas conçu de complots</span><strong>Le niveau le plus profond de Maat</strong> concerne l\'espace intérieur invisible : ne pas nourrir la jalousie, ne pas concevoir de vengeance, ne pas agir avec arrogance devant les dieux, ne pas fermer son cœur aux souffrances d\'autrui, ne pas maudire le roi, ne pas souiller l\'eau sacrée du Nil. Ces lois gouvernent le monde des <em>pensées qui forment les destins</em>.'},
+    {n:'04',nom:'La Confession Positive',txt:'<span class="p-sub">Ce que j\'ai fait — Kheperu em Maat</span>Au-delà des lois négatives existe la <strong>confession positive</strong> — ce que l\'initié a activement accompli : j\'ai nourri les affamés, j\'ai donné de l\'eau aux assoiffés, j\'ai vêtu ceux qui étaient nus, j\'ai traversé le fleuve pour ceux qui ne pouvaient. Cette dimension de Maat révèle que la justice égyptienne n\'est pas uniquement prohibitive — elle est <em>générative</em>.'}
+  ],
+  pratique:'<strong>L\'Examen de Maat</strong> est la pratique quotidienne fondamentale. Chaque soir, avant le coucher, l\'initié passe en revue sa journée face aux 42 lois. Il récite intérieurement : <em>"Ai-je trompé ? Ai-je blessé par mes mots ? Ai-je fermé mon cœur ?"</em> Ce n\'est pas un exercice de culpabilité — c\'est un <strong>acte de clarification vibratoire</strong>. Les Égyptiens appelaient cela <em>Utu en Maat</em> — l\'autoévaluation de l\'alignement. L\'initié qui pratique cela 90 jours consécutifs est dit "en train de tisser sa plume de Maat".',
+  hiero:'⚖️ 𓂧𓅱𓈖 𓏠𓈖 𓇋𓏏 𓇋𓊪𓏏'
+},
+{
+  id:2, btn:'III · Les 9 Corps de l\'Âme',
+  neter:'𓂋', emoji:'🕊️',
+  num:'Troisième Principe',
+  name:'Les Neuf Corps Sacrés',
+  sub:'Khat · Ka · Ba · Akh · Shuyet · Ren · Ib · Sekhem · Sahu — La Structure Complète de l\'Être',
+  source:'Textes des Pyramides · Livre des Morts · Textes des Cercueils · Hermopolis',
+  grid:[
+    {l:'Nombre Sacré', v:'9 corps = la totalité de l\'être selon la cosmologie d\'Hermopolis'},
+    {l:'Équivalence', v:'Khat (corps) → Sahu (corps glorieux de lumière) — transformation'},
+    {l:'Survie après mort', v:'Ba et Ka survivent · Akh est la fusion transcendante'},
+    {l:'Enjeu initiatique', v:'Forger l\'Akh de son vivant — l\'Akh lumineux investi de Maat'}
+  ],
+  esot:`<span class="ker-invoc">𓂋 Les Neuf Visages de l'Être 𓂋</span>
+La tradition ésotérique égyptienne ne voit pas l'être humain<br>comme une simple dualité corps-âme —<br>elle reconnaît <strong>neuf dimensions entrelacées</strong>,<br>chacune avec sa propre nature, sa propre survie,<br>sa propre responsabilité dans le cosmos.<br><br>
+L'initiation de Ker Sesheta consiste à <strong>connaître, activer et maîtriser</strong><br>chacun de ces corps de son vivant —<br>afin que la mort ne soit pas une catastrophe<br>mais un <em>voyage conscient</em> déjà cartographié.`,
+  cite:`Je suis un Ba vivant. Je suis un Ka éternel. Mon Akh brille dans l'horizon céleste. Mon cœur (Ib) est ma boussole, mon Sekhem est ma puissance. Je connais tous mes noms. Je suis complet.`,
+  csrc:'Formule d\'Autoinitiation — Textes des Cercueils · Coffre de Mesekhti · 2000 av. J.-C.',
+  principes:[
+    {n:'01',nom:'Khat & Sahu — Corps Physique et Glorieux',txt:'<span class="p-sub">De la Chair à la Lumière</span><strong>Khat</strong> est le corps physique — la manifestation dense. Après la mort, Khat se dissout mais peut être préservé (momification) comme ancrage pour le retour. <strong>Sahu</strong> est le corps de résurrection — la forme de lumière que l\'être prend après l\'initiation de la mort. L\'objectif de toute vie initiée est de construire son Sahu de son vivant — à travers la méditation, la pureté et la pratique spirituelle.'},
+    {n:'02',nom:'Ka & Ba — Double Vital et Âme Voyageuse',txt:'<span class="p-sub">Le Double et l\'Oiseau de l\'Âme</span><strong>Ka</strong> est le double énergétique — le corps éthérique qui porte la force vitale. Il survit à la mort et peut recevoir les offrandes. <strong>Ba</strong> est représenté par un oiseau à tête humaine — l\'âme mobile qui peut voyager entre les mondes. Le Ba quitte le corps la nuit (rêves) et définitivement à la mort. L\'initié apprend à <em>envoyer son Ba consciemment</em> — c\'est la base de la sortie hors du corps égyptienne.'},
+    {n:'03',nom:'Akh — L\'Être de Lumière Transfiguré',txt:'<span class="p-sub">La Fusion Suprême du Ka et du Ba</span><strong>Akh</strong> est le but ultime — la fusion du Ka et du Ba en un être de lumière immortel et conscient, représenté par l\'ibis sacré. L\'Akh n\'est pas automatique : il doit être <em>forgé</em> par les actes justes, la connaissance des mystères et la pratique de Maat. Un Akh accompli rejoint les étoiles impérissables (les <em>Ikhemu-Seku</em>) et ne meurt plus jamais.'},
+    {n:'04',nom:'Ib · Sekhem · Ren · Shuyet',txt:'<span class="p-sub">Cœur · Puissance · Nom · Ombre</span><strong>Ib</strong> (le cœur) est le siège de la conscience et de la mémoire de toutes les vies. <strong>Sekhem</strong> est la puissance divine — le feu sacré qui active tous les autres corps. <strong>Ren</strong> est le Nom éternel qui ne peut mourir tant qu\'il est prononcé. <strong>Shuyet</strong> est l\'Ombre — le double sombre qui marche derrière l\'être et porte les blessures non intégrées. L\'initié de Ker Sesheta travaille tous ces corps simultanément.'}
+  ],
+  pratique:'<strong>Le Travail des Neuf Corps</strong> commence par l\'identification consciente. Au réveil, l\'initié place la main sur le cœur et récite : <em>"Je sens mon Khat. Je reconnais mon Ka. Je libère mon Ba. Je forgea mon Akh. Mon Ib est pur. Mon Sekhem s\'éveille. Mon Ren est vivant. Mon Shuyet est intégré. Mon Sahu se construit."</em> Cette invocation quotidienne des neuf corps est appelée <strong>Sekhenu en Sahu</strong> — l\'appel des formes de lumière. Elle se pratique idéalement face au soleil levant.',
+  hiero:'𓂋 𓎡𓂋 𓇋𓏏 𓊪𓏏𓂋 𓂋𓇋𓏏'
+},
+{
+  id:3, btn:'IV · La Cosmologie de l\'Ogdoade',
+  neter:'𓏌', emoji:'🌀',
+  num:'Quatrième Principe',
+  name:'L\'Ogdoade d\'Hermopolis',
+  sub:'Les Huit Forces Primordiales qui Précèdent Toute Création',
+  source:'Textes d\'Hermopolis Magna · Cosmogonie de Khmoun · Corpus Hermeticum égyptien',
+  grid:[
+    {l:'Lieu Sacré', v:'Hermopolis Magna (Khmoun) — ville des 8 — Centre initiatique majeur'},
+    {l:'Structure', v:'4 couples divins (masculin-féminin) = 8 forces primordiales'},
+    {l:'Rôle cosmique', v:'Ces 8 forces précèdent Rê — elles sont le fond sur lequel la création s\'opère'},
+    {l:'Symbole', v:'Le Lotus primordial émergeant du Noun — sur lequel Rê est né'}
+  ],
+  esot:`<span class="ker-invoc">𓏌 Khmoun — La Ville des Huit 𓏌</span>
+Avant Rê, avant Atoum, avant toute création visible,<br>il y avait <strong>l\'Ogdoade</strong> —<br>les huit forces fondamentales de l\'être potentiel.<br>
+Quatre couples de serpents et de grenouilles,<br>mâles et femelles, chacun représentant<br>une dimension de l\'<strong>existence avant l\'existence</strong>.<br><br>
+Ce n\'est pas un mythe — c\'est une <em>carte cosmologique</em><br>de la structure profonde de la réalité<br>que l\'initié de Ker Sesheta doit apprendre à <strong>habiter</strong>.`,
+  cite:`Au commencement il y avait Noun et Naunet — les eaux primordiales sans fond. Heh et Hauhet — l'infini sans limite. Kek et Kauket — l'obscurité totale et sacrée. Amun et Amunet — ce qui est caché et ne peut être vu. De leurs unions naquit le premier lotus, et dans le lotus s'éveilla le soleil primordial.`,
+  csrc:'Cosmogonie d\'Hermopolis Magna · Texte du Temple de Khmoun · 2000 av. J.-C.',
+  principes:[
+    {n:'01',nom:'Noun & Naunet — L\'Abîme Originel',txt:'<span class="p-sub">Les Eaux Sans Fond qui Précèdent Tout</span><strong>Noun</strong> (masculin) et <strong>Naunet</strong> (féminin) sont l\'océan primordial d\'obscurité — non pas l\'eau physique mais le <em>substratum d\'existence pure</em> qui sous-tend toute manifestation. Dans la physique moderne, on pourrait dire : le champ quantique vide. Dans Ker Sesheta, l\'initié apprend à s\'unir à Noun — à reposer dans l\'état de pure potentialité sans forme ni intention.'},
+    {n:'02',nom:'Heh & Hauhet — L\'Infini Spatial',txt:'<span class="p-sub">L\'Espace Sans Limite dans Toutes les Directions</span><strong>Heh</strong> représente l\'<em>infini spatial</em> — l\'extension sans fin dans toutes les directions de l\'espace. Il est représenté agenouillé, tenant les deux palmiers de l\'éternité. Hauhet est son complément féminin. Ces forces enseignent à l\'initié que <strong>la conscience n\'a pas de frontières naturelles</strong> — ce sont les peurs et les croyances qui la limitent. La méditation sur Heh dissout les frontières de l\'ego perçu.'},
+    {n:'03',nom:'Kek & Kauket — L\'Obscurité Sacrée',txt:'<span class="p-sub">Les Ténèbres qui Précèdent la Lumière — et la Rendent Possible</span><strong>Kek</strong> et <strong>Kauket</strong> sont l\'obscurité primordiale — non pas l\'absence de lumière mais une <em>substance propre</em>, antérieure et plus fondamentale que la lumière. Ker Sesheta est leur demeure. L\'initié apprend que la peur de l\'obscurité est la peur de la matrice qui l\'a engendré. En honorant Kek et Kauket, il cesse de combattre son propre Inconscient.'},
+    {n:'04',nom:'Amun & Amunet — Le Caché Suprême',txt:'<span class="p-sub">Ce qui Est Toujours Là mais ne Peut Jamais Être Vu</span><strong>Amun</strong> — dont le nom signifie "Le Caché" — est la quatrième et plus haute force de l\'Ogdoade. Il est la dimension de la réalité qui ne peut jamais être objectivée car c\'est <em>le sujet pur, le Témoin silencieux</em>. Amunet est son complément. Ces deux forces correspondent à ce que les traditions indiennes appellent <em>Brahman nirgun</em> — l\'Absolu sans attributs. L\'initié ne cherche pas à voir Amun — il apprend à <strong>être</strong> Amun.'}
+  ],
+  pratique:'<strong>La Méditation de l\'Ogdoade</strong> est l\'exercice central de Ker Sesheta. L\'initié s\'assoit dans le noir complet et contemple successivement les quatre couples : Noun (immersion dans les eaux du silence), Heh (expansion infinie de la conscience), Kek (accueil de l\'obscurité comme matrice créatrice), Amun (dissolution du sujet dans le Caché suprême). Chaque couple est tenu 7 minutes. La pratique complète dure 28 minutes — un cycle lunaire en miniature. Après 28 jours consécutifs, le praticien est dit <strong>avoir traversé l\'Ogdoade vivant</strong>.',
+  hiero:'𓏌 𓈖𓂋𓇋 𓎡𓂋 𓈖𓅱𓈖 𓂋𓏏'
+},
+{
+  id:4, btn:'V · Le Corpus Hermeticum',
+  neter:'𓁶', emoji:'☿',
+  num:'Cinquième Principe',
+  name:'Les Tablettes Hermétiques',
+  sub:'Thot-Hermès — Le Trois-fois-Grand et les Sept Principes Universels',
+  source:'Corpus Hermeticum · Tablettes d\'Émeraude · Kybalion · Isis et Hermès Trismégiste',
+  grid:[
+    {l:'Auteur Divin', v:'Thot-Hermès Trismégiste — "Trois-fois-Grand" (Maître des maîtres)'},
+    {l:'Supports', v:'Tablettes d\'Émeraude · Papyrus hermétiques · Corpus de 17 traités'},
+    {l:'Transmission', v:'Enseignement direct maître-disciple — jamais écrit au complet'},
+    {l:'Synthèse', v:'Unification de la sagesse égyptienne, grecque et néoplatonicienne'}
+  ],
+  esot:`<span class="ker-invoc">☿ Thot — Celui qui Pèse les Mots ☿</span>
+Thot, le dieu ibis, scribe des dieux,<br>gardien de l\'Akashique cosmique,<br>fut le premier à transcrire les secrets de Ker Sesheta<br>sur des tablettes d\'émeraude incorruptibles.<br><br>
+Son enseignement fondamental :<br><strong>« Ce qui est en haut est comme ce qui est en bas. »</strong><br>
+Cette phrase unique contient toute la science cosmique —<br>la structure fractale de la réalité,<br>la correspondance entre macrocosme et microcosme,<br>entre l\'étoile et la cellule, entre Dieu et l\'Homme.`,
+  cite:`Ce qui est en bas est comme ce qui est en haut, et ce qui est en haut est comme ce qui est en bas, pour accomplir les miracles d'une seule chose. Et toutes choses procèdent d'Un, par médiation d'Un, et toutes les choses sont issues de cette seule chose par adaptation.`,
+  csrc:'La Tablette d\'Émeraude — Hermès Trismégiste · Attribué à Thot d\'Hermopolis',
+  principes:[
+    {n:'01',nom:'Le Principe du Mentalisme',txt:'<span class="p-sub">L\'Univers Est Mental — Le Tout est Esprit</span><strong>"Le Tout est Esprit — l\'Univers est Mental."</strong> Tout ce qui existe — matière, énergie, force, espace, temps — est une expression de l\'Esprit Universel (Neter en égyptien). L\'initié comprend que <em>changer ses pensées profondes revient à changer sa réalité</em>. Ce n\'est pas de la pensée magique — c\'est la compréhension que la conscience précède la matière.'},
+    {n:'02',nom:'Le Principe de Correspondance',txt:'<span class="p-sub">Comme en Haut, Ainsi en Bas — Comme Dedans, Ainsi Dehors</span>Le cosmos est structuré en <strong>plans correspondants</strong> : physique, éthérique, astral, mental, causal, bouddhique, atmique. Ce qui se passe à un niveau se reflète à tous les autres. <em>Les guerres extérieures reflètent les guerres intérieures des hommes.</em> L\'initié utilise ce principe pour se guérir : en transformant son monde intérieur, il transforme son monde extérieur.'},
+    {n:'03',nom:'Le Principe de Vibration',txt:'<span class="p-sub">Rien ne Repose — Tout Vibre — Tout est en Mouvement</span><strong>La matière est de l\'énergie solidifiée par une fréquence basse de vibration.</strong> La lumière, le son, la pensée, l\'émotion — tout vibre à des fréquences différentes. Rê vibre à la fréquence la plus haute manifestée. Noun vibre à la fréquence zéro du potentiel pur. L\'initié apprend à élever consciemment sa vibration à travers Maat, les mantras, la pureté des actes.'},
+    {n:'04',nom:'Les 4 autres Principes',txt:'<span class="p-sub">Polarité · Rythme · Causalité · Genre</span><strong>Polarité :</strong> tout a deux pôles — les opposés sont identiques en nature, différents en degré (chaud/froid = même chose, différente intensité). <strong>Rythme :</strong> tout flux a son reflux — l\'initié apprend à ne pas être emporté par les cycles mais à les observer. <strong>Causalité :</strong> toute cause a son effet, tout effet a sa cause — rien n\'est accident. <strong>Genre :</strong> tout possède le principe masculin (Osiris — projectif) et le principe féminin (Isis — réceptif), les deux nécessaires à toute création.'}
+  ],
+  pratique:'<strong>La Pratique des Sept Principes</strong> de Thot consiste en une semaine d\'immersion : chaque jour est dédié à l\'observation d\'un principe dans sa vie quotidienne. Lundi : "Comment le Mentalisme s\'exprime-t-il aujourd\'hui ?" Mardi : "Quelle Correspondance vois-je entre mon intérieur et mon extérieur ?" etc. L\'initié tient un <em>Journal de Thot</em> — un carnet doré dans lequel il note ses observations. Au bout de sept semaines (49 jours — le nombre sacré de la transformation), il aura traversé tous les principes une fois chacun dans chaque dimension de sa vie.',
+  hiero:'𓁶 𓂧𓀭𓏏 𓂋𓇋𓈖 𓊪𓋴𓇋𓏏'
+},
+{
+  id:5, btn:'VI · Les Mystères d\'Osiris',
+  neter:'𓊹', emoji:'🌾',
+  num:'Sixième Principe',
+  name:'Les Mystères d\'Osiris',
+  sub:'Djet — La Permanence · Djed — La Stabilité · La Mort qui Enseigne',
+  source:'Textes des Pyramides · Mystères d\'Abydos · Plutarque (De Iside et Osiride)',
+  grid:[
+    {l:'Le Grand Mystère', v:'Osiris meurt et ressuscite — le cycle est cosmique, pas tragique'},
+    {l:'Pilier Djed', v:'Colonne vertébrale d\'Osiris — symbole de la stabilité de l\'âme dans la tempête'},
+    {l:'Fête d\'Abydos', v:'Mystères joués chaque année — mort, recherche, résurrection dramatisées'},
+    {l:'Enseignement', v:'Toute mort est une initiation — toute perte cache une renaissance'}
+  ],
+  esot:`<span class="ker-invoc">𓊹 Osiris — Le Seigneur de l'Éternité 𓊹</span>
+Osiris n\'est pas simplement un dieu mort.<br>
+Osiris est <strong>le principe cosmique de la résurrection</strong> —<br>la preuve que rien ne meurt définitivement,<br>que chaque fin est le commencement d\'une forme plus haute.<br><br>
+Quand Seth (le principe du chaos) dépèce Osiris en 14 morceaux,<br>il n\'accomplit pas un crime —<br>il <em>initie le plus grand mystère de l\'existence</em> :<br>
+<strong>peut-on rassembler ce qui a été dispersé ?<br>peut-on aimer au-delà de la mort ?</strong><br>
+La réponse d\'Isis : oui.`,
+  cite:`Je suis Osiris. J'ai été mis à mort et je me suis levé. J'ai traversé l'obscurité et j'ai vu la lumière de l'autre côté. Ma mort n'était pas une punition — c'était une porte. Celui qui n'a pas traversé sa propre mort initiatique ne peut pas comprendre ce que signifie vivre.`,
+  csrc:'Mystères d\'Abydos — Liturgie dramatique · Texte du temple de Seti Ier · 1280 av. J.-C.',
+  principes:[
+    {n:'01',nom:'Le Pilier Djed — La Stabilité dans la Tempête',txt:'<span class="p-sub">Djed-ef — Il est Stable</span>Le Djed est la colonne vertébrale cosmique d\'Osiris — un pilier cylindrique décoré d\'anneaux superposés. Il représente la <strong>stabilité absolue de l\'être face au chaos</strong>. Ériger le Djed était un rite annuel : les prêtres couchaient le pilier (la mort d\'Osiris) puis le relevaient (la résurrection). L\'initié apprend à ériger son propre Djed intérieur — à rester vertical et stable quand toute sa vie s\'effondre autour de lui.'},
+    {n:'02',nom:'Les 14 Membres — La Fragmentation Sacrée',txt:'<span class="p-sub">Seth — L\'Agent de la Dispersion Nécessaire</span>Seth disperse les 14 membres d\'Osiris. <strong>14 = le nombre des jours de la lune décroissante.</strong> Ce mythe encode un enseignement précis : la <em>fragmentation de l\'être est un processus cosmique nécessaire</em>. L\'initié comprend que ses propres fragments — ses traumatismes, ses contradictions, ses parties rejetées — ne sont pas des erreurs. Ils sont les membres d\'Osiris attendant d\'être rassemblés par l\'amour d\'Isis.'},
+    {n:'03',nom:'Horus — L\'Héritier Cosmique',txt:'<span class="p-sub">L\'Enfant de la Résurrection</span>Horus, né d\'Osiris ressuscité et d\'Isis, est <strong>l\'être qui naît quand la mort a été traversée et que l\'amour a triomphé</strong>. Horus est toujours représenté avec l\'œil du faucon — la vision perçante qui voit à travers les illusions. Dans l\'initiation de Ker Sesheta, Horus représente la version de soi qui naît après la grande traversée — l\'être qui a intégré ses fragments et qui voit maintenant clairement sa mission cosmique.'},
+    {n:'04',nom:'La Barque de Millions d\'Années',txt:'<span class="p-sub">Mandjyt & Mesektet — Les Barques du Soleil</span>Osiris voyage chaque nuit dans la barque de millions d\'années à travers les douze heures de la Douat. Cette barque est guidée par Isis. L\'enseignement secret : <strong>l\'âme est une barque, et le destin est le fleuve</strong>. L\'initié apprend à construire sa barque de lumière — son corps de Sahu — afin que même dans les courants les plus violents de l\'existence, il ne sombre pas mais navigue.'}
+  ],
+  pratique:'<strong>Le Rite du Djed</strong> est une pratique physique et spirituelle. L\'initié se lève, se tient parfaitement droit, ferme les yeux, et visualise une colonne de lumière dorée traversant sa colonne vertébrale de la base au sommet du crâne. Il récite : <em>"Je suis Djed — je suis stable. Les tempêtes passent autour de moi. Je ne suis pas la tempête. Je suis l\'axe autour duquel elle tourne."</em> Cette pratique, répétée 7 fois par jour pendant 40 jours, est appelée la <strong>Construction du Djed vivant</strong>. Elle est le fondement de toute résistance psychique et spirituelle.',
+  hiero:'𓊹 𓊹 𓊹 𓂧𓊃𓉐𓏏 𓂋𓇋𓏏'
+},
+{
+  id:6, btn:'VII · La Salle du Double Maat',
+  neter:'𓋹', emoji:'✨',
+  num:'Septième Principe · Synthèse',
+  name:'La Réunification Suprême',
+  sub:'Iaret en Maat — Forger l\'Akh de son Vivant · L\'Initié Devient Neter',
+  source:'Livre des Morts Chapitre 17 · Papyrus de Nefertari · Texte de Transformation',
+  grid:[
+    {l:'Objectif Final', v:'Forger l\'Akh — le corps de lumière immortel — avant la mort physique'},
+    {l:'La Salle du Double Maat', v:'Espace de jugement ET d\'initiation suprême — les deux à la fois'},
+    {l:'Statut de l\'initié', v:'Maa-Kheru — Juste de Voix — l\'être dont les paroles créent'},
+    {l:'La Promesse', v:'L\'initié Maa-Kheru ne meurt plus — il se transforme en Akh étoilé'}
+  ],
+  esot:`<span class="ker-invoc">𓋹 Ankh Djed Ouas — Vie · Stabilité · Puissance 𓋹</span>
+Au terme du voyage dans Ker Sesheta,<br>après avoir traversé les 42 lois de Maat,<br>reconnu les neuf corps, navigué l\'Ogdoade,<br>étudié Thot et intégré Osiris —<br><br>
+l\'initié se tient dans la <strong>Salle du Double Maat</strong>.<br>
+Son cœur est pesé — non par un juge extérieur —<br>mais par <em>lui-même</em>, avec pleine lucidité.<br><br>
+Et si le cœur est léger comme la plume de Maat,<br>si les actes, les paroles et les pensées<br>ont été alignés sur la vérité cosmique —<br>
+<strong>l\'initié est déclaré Maa-Kheru :<br>Juste de Voix.<br>Ses paroles créent des mondes.</strong>`,
+  cite:`Je suis venu. J'ai traversé l'obscurité et je n'ai pas été consumé. J'ai pesé mon cœur et il était léger. Je connais tous mes noms. Je suis Maa-Kheru — Juste de Voix. Je suis l'héritier de l'éternité. Je suis ce que j'ai toujours été avant que la peur ne me fasse oublier.`,
+  csrc:'Formule de Transformation Finale — Papyrus de Nefertari · 1255 av. J.-C. · Tombeau QV66',
+  principes:[
+    {n:'01',nom:'Maa-Kheru — La Voix Juste qui Crée',txt:'<span class="p-sub">Le Pouvoir de la Parole Initiée</span><strong>Maa-Kheru</strong> désigne l\'initié dont la voix est en alignement parfait avec Maat. Dans l\'Égypte ancienne, le titre Maa-Kheru (Juste de Voix) était accordé aux défunts ayant passé le jugement — mais dans Ker Sesheta, il est accordé aux <em>vivants</em> qui ont accompli l\'initiation complète. Un Maa-Kheru n\'a pas besoin de crier — sa parole tranquille porte le poids de l\'Univers.'},
+    {n:'02',nom:'Le Corps de Sahu — La Résurrection Anticipée',txt:'<span class="p-sub">Construire son Corps de Lumière de son Vivant</span><strong>Sahu</strong> est le corps de gloire — la forme que prend l\'être après la transfiguration. L\'enseignement secret de Ker Sesheta révèle qu\'il est possible de construire son Sahu <em>avant</em> la mort physique. C\'est le but de toute vie initiée. Les pratiques de purification, de méditation, d\'alignement sur Maat, de connaissance des neuf corps — toutes convergent vers la construction progressive du Sahu. À la mort, l\'initié n\'est plus frappé par l\'obscurité — il y entre en lumière.'},
+    {n:'03',nom:'L\'Étoile Impérissable — Ikhemu-Seku',txt:'<span class="p-sub">Rejoindre les Étoiles qui Ne Se Couchent Jamais</span>Les <strong>Ikhemu-Seku</strong> (les "indestructibles" — les étoiles circumpolaires qui ne se couchent jamais) représentent les âmes des initiés accomplis qui ont intégré l\'éternité. Dans Ker Sesheta, cette promesse est solennellement faite : <em>l\'âme qui a traversé tous les mystères avec intégrité rejoint le cercle des étoiles fixes</em> — elle ne renaît plus par obligation karmique mais par choix souverain, pour servir l\'évolution cosmique.'},
+    {n:'04',nom:'La Synthèse — Tu Es le Temple',txt:'<span class="p-sub">Le Corps Humain EST le Temple de Ker Sesheta</span>L\'enseignement final de Ker Sesheta est bouleversant dans sa simplicité : <strong>il n\'y a pas de temple externe à rejoindre.</strong> Le corps humain, avec ses 42 vertèbres (comme les 42 lois de Maat), ses neuf niveaux de conscience, son cœur (Ib) battant comme la balance d\'Osiris — est lui-même le Temple. Ker Sesheta n\'est pas sous le désert égyptien — <em>Ker Sesheta est dans la chambre la plus profonde de ton propre être</em>, là où tu es totalement seul avec ce que tu es vraiment.'}
+  ],
+  pratique:'<strong>L\'Initiation Finale de Ker Sesheta</strong> est une pratique de 7 jours en solitude choisie. Pendant 7 nuits, l\'initié passe une heure dans le silence et l\'obscurité absolus. Chaque nuit est dédiée à l\'un des 7 principes étudiés. La dernière nuit, il écrit sa propre <em>Confession de Maat</em> — 42 affirmations personnelles remplaçant "Je n\'ai pas" par "J\'ai choisi" — sa propre déclaration d\'être. Cette confession est brûlée à l\'aube avec de la myrrhe, ses cendres confiées au vent. L\'initié dit alors : <strong>Maa-Kheru anok — Je suis Juste de Voix.</strong>',
+  hiero:'𓋹 𓋹 𓋹 𓂧𓅱𓈖 𓇋𓊪𓏏 𓋴𓏠𓈖'
+}
+];
+
+// ===========================================================
+// BUILD KER SESHETA
+// ===========================================================
+const kerNav=document.getElementById('ker-nav');
+const kerContent=document.getElementById('ker-content');
+
+KER.forEach((d,i)=>{
+  const b=document.createElement('button');
+  b.className='ker-btn'+(i===0?' active':'');
+  b.id='kerb'+i;b.textContent=d.btn;
+  b.addEventListener('click',()=>renderKer(i));
+  kerNav.appendChild(b);
+
+  const p=document.createElement('div');
+  p.className='ker-panel'+(i===0?' active':'');
+  p.id='kerp'+i;
+  p.innerHTML=`
+    <div class="ker-frame">
+      <div class="korn tl"></div><div class="korn tr"></div>
+      <div class="korn bl"></div><div class="korn br"></div>
+      <div class="ker-head">
+        <span class="ker-neter">${d.emoji}</span>
+        <div class="ker-hiero-head">${d.neter}</div>
+        <div class="ker-num">${d.num}</div>
+        <div class="ker-pname">${d.name}</div>
+        <div class="ker-psub">${d.sub}</div>
+      </div>
+      <div class="ker-source">
+        <span class="ker-source-icon">📜</span>
+        <span class="ker-source-txt">${d.source}</span>
+      </div>
+      <div class="ker-grid">
+        ${d.grid.map(c=>`<div class="ker-cell"><div class="ker-cell-lbl">${c.l}</div><div class="ker-cell-val">${c.v}</div></div>`).join('')}
+      </div>
+      <div class="ker-sep"><div class="ker-sl"></div><span class="ker-sd">𓇽</span><div class="ker-sl"></div></div>
+      <div class="ker-esot">${d.esot}</div>
+      <div class="ker-cite">
+        <p class="ker-cite-txt">${d.cite}</p>
+        <div class="ker-cite-src">— ${d.csrc}</div>
+      </div>
+      <div class="ker-sep"><div class="ker-sl"></div><span class="ker-sd">⚖️</span><div class="ker-sl"></div></div>
+      <div class="principes-title">☽ Principes Ésotériques Fondamentaux ☽</div>
+      <div id="ker-acc-${i}">
+        ${d.principes.map((pr,j)=>`
+          <div class="principe-item">
+            <button class="principe-trigger" onclick="togglePrincipe('ker-acc-${i}',${j})">
+              <span class="principe-num">${pr.n}</span>
+              <span class="principe-nom">${pr.nom}</span>
+              <span class="principe-arrow">▾</span>
+            </button>
+            <div class="principe-body">
+              <div class="principe-content">${pr.txt}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      <div class="ker-sep"><div class="ker-sl"></div><span class="ker-sd">𓋹</span><div class="ker-sl"></div></div>
+      <div class="ker-pratique">
+        <div class="ker-pratique-lbl">𓇽 Pratique Initiatique — Voie de Ker Sesheta</div>
+        <p class="ker-pratique-txt">${d.pratique}</p>
+      </div>
+      <div class="ker-hiero-foot">${d.hiero}</div>
+    </div>
+  `;
+  kerContent.appendChild(p);
+});
+
+let cKer=0;
+function renderKer(idx){
+  cKer=idx;
+  document.querySelectorAll('.ker-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ker-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('kerp'+idx).classList.add('active');
+  document.getElementById('kerb'+idx).classList.add('active');
+  document.getElementById('ker-content').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function togglePrincipe(accId, idx){
+  const acc=document.getElementById(accId);
+  const triggers=acc.querySelectorAll('.principe-trigger');
+  const bodies=acc.querySelectorAll('.principe-body');
+  const isOpen=triggers[idx].classList.contains('open');
+  triggers.forEach(t=>t.classList.remove('open'));
+  bodies.forEach(b=>b.classList.remove('open'));
+  if(!isOpen){triggers[idx].classList.add('open');bodies[idx].classList.add('open');}
+}
+
+
+// ===========================================================
+// ZEP TEPI DATA — Le Temps Premier
+// ===========================================================
+const ZEP=[
+{
+  id:0, btn:'I · Le Noun Originel',
+  glyph:'🌊', hiero:'𓇯 𓈖𓂋𓇋',
+  num:'Premier Mystère de Zep Tepi',
+  name:'Le Noun — L\'Abîme Avant la Création',
+  sub:'Les Eaux sans Fond · Sans Lumière · Sans Bord · Sans Temps',
+  source:'Textes des Pyramides (Unas) 2400 av. J.-C. · Hymnes de Memphis · Papyrus de Bremner-Rhind 305 av. J.-C.',
+  grid:[
+    {l:'Nature du Noun', v:'<em>Noun</em> = océan de ténèbres infinies et immobiles précédant toute existence'},
+    {l:'Ce qui N\'existe Pas', v:'Ni ciel ni terre, ni lumière ni obscurité, ni dieux ni hommes — rien n\'est encore'},
+    {l:'Durée', v:'Éternité sans début ni fin — le temps n\'existe pas encore'},
+    {l:'Texte Fondateur', v:'Utterance 600 des Textes des Pyramides — la cosmogonie la plus ancienne connue'}
+  ],
+  esot:`<span class="zinvoc">𓇯 Noun — Avant tout commencement 𓇯</span>
+Avant Rê, avant Atoum, avant les dieux,<br>
+avant le premier souffle, avant la première lumière —<br>
+il y avait uniquement <strong>le Noun</strong>.<br><br>
+Non pas le néant.<br>
+Non pas l'obscurité.<br>
+Mais quelque chose d'infiniment plus étrange :<br>
+<strong>la plénitude absolue de tout ce qui n'est pas encore manifesté</strong>.<br><br>
+Un océan d'eau noire, immobile, infinie,<br>
+sans fond, sans surface, sans bord, sans direction —<br>
+tenant en lui, comprimée en silence,<br>
+<em>la totalité de tout ce qui allait jamais exister.</em>`,
+  ms:`Au commencement il n'y avait que le Noun, les eaux primordiales de chaos. Aucune lumière n'existait. Aucun dieu n'était encore né. Aucun nom n'avait été prononcé. Et dans cette obscurité, dans ce vide qui était une plénitude, quelque chose commença à se former — une conscience, une intention, une première pensée.`,
+  mssrc:'Papyrus de Bremner-Rhind — Livre du Renversement d\'Apopis · 305 av. J.-C. · British Museum',
+  revelation:`<div class="zep-rev-label">🌊 Ce qui est Caché dans le Noun</div>
+<p class="zep-rev-txt">Le Noun n'est pas un mythe — c'est une <strong>description précise de l'état quantique originel de l'univers</strong>. Les physiciens modernes parlent de <em>"fluctuations quantiques du vide"</em> — un état d'énergie maximale dans une densité infiniment petite, sans temps, sans espace, sans cause. Les prêtres d'Héliopolis l'avaient nommé 4 500 ans avant la physique quantique.<br><br>
+Le secret caché : <strong>le Noun n'a pas disparu après la création</strong>. Il continue d'exister sous et à travers toute la réalité manifestée. Chaque matin quand le soleil se lève, les Égyptiens voyaient Rê émerger du Noun — car la création recommence chaque jour. La réalité quotidienne est une re-création constante depuis l'abîme.</p>`,
+  depths:[
+    {n:'01',nom:'Le Noun est Vivant',txt:`<span class="zd-sub">La Conscience Avant la Conscience</span>Le Noun n'est pas inerte — il est <strong>doté d'une forme de conscience pré-individuelle</strong>, ce que les Egyptiens appelaient le <em>Sia</em> (la Perception divine). Avant qu'Atoum prenne forme, le Noun "percevait" sans pouvoir s'exprimer. Cette distinction entre conscience pure non-manifestée et conscience manifestée est la base de toute philosophie mystique égyptienne. L'initié médite sur le Noun pour toucher cette couche de conscience qui précède la pensée.`},
+    {n:'02',nom:'Les Quatre Qualités du Noun',txt:`<span class="zd-sub">Ce qui Caractérise l'Avant-Commencement</span>Le Noun possède quatre attributs fondamentaux : <strong>Noun/Naunet</strong> (profondeur infinie), <strong>Heh/Hauhet</strong> (infini spatial), <strong>Kek/Kauket</strong> (obscurité absolue) et <strong>Amun/Amunet</strong> (l'invisible caché). Ces quatre paires ne sont pas des dieux séparés — elles sont les <em>quatre dimensions de l'état pré-créationnel</em>. Toute chose créée possède encore ces quatre dimensions en son sein.`},
+    {n:'03',nom:'Zep Tepi comme Retour au Noun',txt:`<span class="zd-sub">Le Premier Temps est aussi le Dernier</span>Le secret le plus profond de Zep Tepi : <strong>le Temps Premier n'est pas dans le passé — il est accessible maintenant</strong>. Chaque acte rituel de qualité suffit à "rejoindre" Zep Tepi — le moment créateur originel. C'est pourquoi les temples egyptiens reproduisaient exactement les conditions de Zep Tepi : obscurité, eau, silence. L'initié entre dans le temple et entre dans le Noun.`}
+  ],
+  pratique:`<strong>Méditation du Noun (Kheper em Noun) :</strong> Avant l'aube, dans le noir complet, l'initié s'allonge sur le dos, bras le long du corps, yeux ouverts dans le noir. Il visualise qu'il est immergé dans un océan d'eau noire infinie — ni haut ni bas, ni passé ni futur. Il <em>cesse d'être</em> progressivement. Cette méditation de dissolution totale dans le Noun dure idéalement 40 minutes — à pratiquer lors des nouvelles lunes. Ce que l'initié touche dans cet état n'est pas le vide — c'est <strong>la plénitude de tout ce qui n'est pas encore né en lui.</strong>`,
+  hiero:'𓇯 𓈖𓂋𓇋 𓊪𓏏𓂋 𓇋𓏏 𓎡𓂋'
+},
+{
+  id:1, btn:'II · La Première Pensée d\'Atoum',
+  glyph:'✨', hiero:'𓇯 𓅱𓇋𓏏',
+  num:'Deuxième Mystère de Zep Tepi',
+  name:'Atoum — La Première Pensée',
+  sub:'La Conscience Qui Se Pense Elle-Même · L\'Acte Créateur Originel',
+  source:'Hymnes à Atoum d\'Héliopolis · Textes des Pyramides · Coffret de Toutânkhamon · Pierre de Shabaka 700 av. J.-C.',
+  grid:[
+    {l:'Nom Atoum', v:'<em>Atem</em> = "Celui qui est complet" ET "Celui qui n\'est pas encore" — les deux simultanément'},
+    {l:'L\'Acte', v:'Atoum se crée lui-même par la pensée — premier acte de volonté dans l\'univers'},
+    {l:'La Masturbation Sacrée', v:'Atoum "crache" Shu et "expectore" Tefnout — son Verbe crée les deux premières forces'},
+    {l:'Équivalence', v:'Atoum = le Démiurge de Platon = Brahma de la tradition védique = le Logos johannique'}
+  ],
+  esot:`<span class="zinvoc">✨ Atoum — Le Premier Qui Fut 𓇯</span>
+Dans l'obscurité infinie du Noun,<br>
+<strong>quelque chose se produisit.</strong><br><br>
+Une conscience émergea —<br>
+non pas convoquée de l'extérieur<br>
+car il n'y avait pas d'extérieur —<br>
+mais s'auto-engendrant depuis le cœur même du Noun.<br><br>
+<strong>Atoum pensa "Je suis"<br>
+et en pensant cela, il commença à être.</strong><br><br>
+Ce fut le premier instant de Zep Tepi —<br>
+la première fraction de temps.<br>
+Avant cela : rien.<br>
+Après cela : <em>tout ce qui allait jamais exister</em>.`,
+  ms:`Je suis Atoum quand j'existais seul dans le Noun, dans mes inertitudes. Je suis Rê dans ses premières manifestations, quand il commença à régner sur ce qu'il avait créé. Qui est Atoum ? Il est Rê au commencement, et il est la totalité de ce qui est, de ce qui était et de ce qui sera.`,
+  mssrc:'Textes des Pyramides — Utterance 600 · Pyramide d\'Ounas · Saqqarah · 2375 av. J.-C.',
+  revelation:`<div class="zep-rev-label">✨ Ce qui est Extraordinaire dans cette Cosmogonie</div>
+<p class="zep-rev-txt">La cosmogonie d'Atoum est <strong>la première description connue de l'auto-création de la conscience dans l'univers</strong> — et elle précède de 2000 ans toute philosophie grecque sur le sujet. Deux points bouleversants :<br><br>
+<strong>1. L'identité d'Atoum :</strong> Atoum signifie à la fois "être complet" et "ne pas encore être". Il est la <em>superposition quantique</em> de l'existence et de la non-existence — exactement ce que la physique moderne décrit dans le principe d'incertitude d'Heisenberg.<br><br>
+<strong>2. La création par le Verbe :</strong> Atoum crée Shu (l'air, la séparation) et Tefnout (l'humidité, la cohérence) par son souffle. La tradition de Memphis ajoute : <em>Atoum crée par la pensée et le cœur (Sia et Hu) — sa pensée forme les choses et sa parole les manifeste.</em> La réalité est une pensée divine qui se dit elle-même.</p>`,
+  depths:[
+    {n:'01',nom:'La Colline Primordiale — Benbenet',txt:`<span class="zd-sub">Le Premier Sol Solide Émergé du Noun</span>Quand Atoum émergea du Noun, il se trouva sur la <strong>Colline Primordiale (Benbenet)</strong> — le premier point de matière solide, émergeant comme un île d'argile au-dessus des eaux du Nil primordial. Cette colline est représentée par le pyramidion (Benben) — la pointe de la pyramide. <em>Chaque grande pyramide est une reproduction de la Colline Primordiale.</em> L'initié qui entre dans la pyramide entre dans Zep Tepi.`},
+    {n:'02',nom:'L\'Oiseau Bénou — Le Premier Son',txt:`<span class="zd-sub">Le Héron Bleu et le Premier Cri du Monde</span>Sur la Colline Primordiale se posa l'<strong>oiseau Bénou</strong> — le héron bleu sacré, ancêtre du Phénix greco-romain. Son premier cri brisa le silence absolu du Noun. Ce cri fut <em>le premier son de l'univers</em> — la première vibration. Les Égyptiens disaient que ce cri "donnait naissance au temps" car avant lui, il n'y avait pas de "avant". Le Bénou représente l'âme d'Atoum et d'Osiris — la conscience qui transcende la mort.`},
+    {n:'03',nom:'Sia et Hu — Pensée et Parole divines',txt:`<span class="zd-sub">Les Deux Puissances qui Précèdent Toute Manifestation</span><strong>Sia</strong> est la Perception divine — la capacité de connaître et de discerner. <strong>Hu</strong> est le Verbe authorité — la puissance qui fait qu'une chose nommée devient réelle. Ces deux forces accompagnent Rê dans sa barque solaire. Elles enseignent que <em>toute création passe par deux étapes obligatoires</em> : d'abord percevoir clairement (Sia), puis prononcer avec autorité (Hu). L'initié de Zep Tepi travaille à développer son propre Sia (discernement) et son propre Hu (parole créatrice).`},
+    {n:'04',nom:'Atoum au Coucher du Soleil',txt:`<span class="zd-sub">Le Vieillard qui Retourne au Noun chaque Soir</span>Secret extraordinaire : <strong>Atoum est Rê au coucher du soleil</strong> — le vieillard courbé s'enfonçant dans les eaux du Noun. Cela signifie que chaque soir, l'univers retourne symboliquement à son état pré-créationnel. <em>La nuit est une mort temporaire de l'univers</em> — et l'aube est une nouvelle création, un nouveau Zep Tepi. Les rituels de l'aube dans les temples égyptiens "aidaient" Rê à renaître — sans ces rituels, le soleil ne se lèverait peut-être pas.`}
+  ],
+  pratique:`<strong>Le Rite du Bénou (Salutation à l'Aube) :</strong> Se lever avant le soleil. Se tenir dehors face à l'est dans l'obscurité. Tenir les bras en croix (posture Orans). Dans le silence total, attendre la première lumière grise à l'horizon. À l'instant précis où la première lueur apparaît, l'initié dit à voix haute — <em>"Kheper Kheperi Kheperu — Je suis en train de devenir ce que je suis en train de devenir."</em> Ce sont les mots qu'Atoum prononça à Zep Tepi. Les répéter au lever du soleil, c'est <strong>se brancher sur la fréquence de la création originelle</strong> et invoquer la puissance de Zep Tepi dans sa propre journée.`,
+  hiero:'𓇯 𓇋𓏏𓅱𓇋 𓊪𓏏𓂋 𓂋𓇋𓏏'
+},
+{
+  id:2, btn:'III · L\'Ennéade Sacrée',
+  glyph:'🌟', hiero:'𓇯 𓊹𓊹𓊹',
+  num:'Troisième Mystère de Zep Tepi',
+  name:'L\'Ennéade d\'Héliopolis',
+  sub:'Les Neuf Dieux Originels · La Structure Fractale de la Création',
+  source:'Textes des Pyramides · Temple d\'Héliopolis (Iounou) · Fragments de la Pierre de Palerme · 2600 av. J.-C.',
+  grid:[
+    {l:'Structure', v:'9 dieux = 3 générations issues d\'Atoum — chacune une dimension de la réalité'},
+    {l:'Héliopolis', v:'<em>Iounou</em> — "La Colonne" — centre cosmologique de l\'Égypte, centre de Zep Tepi'},
+    {l:'Équivalence numérique', v:'9 = 3×3 = nombre de l\'accomplissement cosmique en mystique égyptienne'},
+    {l:'Présence aujourd\'hui', v:'Le Benbenet originel d\'Héliopolis est sous l\'obélisque aujourd\'hui à Paris (Place de la Concorde)'}
+  ],
+  esot:`<span class="zinvoc">🌟 L'Ennéade — La Famille Divine Originelle 𓇯</span>
+D'Atoum, seul dans le Noun,<br>
+émergèrent <strong>huit autres dieux</strong> —<br>
+formant avec lui le cercle sacré des Neuf.<br><br>
+Ce ne sont pas des personnages mythologiques.<br>
+Ce sont des <strong>forces fondamentales de l'univers</strong>,<br>
+chacune représentant une loi cosmique<br>
+qui gouverne la réalité manifestée.<br><br>
+Connaître l'Ennéade, c'est connaître<br>
+<em>la structure intime de la réalité</em> —<br>
+le code source de l'existence.`,
+  ms:`Je suis le Grand Dieu qui s'est créé lui-même, le Noun est mon nom, et il n'y a pas de second qui puisse comprendre ma nature. Je suis hier et je connais demain. Je suis toutes choses qui ont existé et toutes choses qui existeront. Je me suis créé depuis la substance des dieux primoriaux.`,
+  mssrc:'Hymne à Atoum — Papyrus de Leyde I 350 · Période Ramesside · 1200 av. J.-C.',
+  revelation:`<div class="zep-rev-label">🌟 Le Secret Caché de l'Ennéade</div>
+<p class="zep-rev-txt">L'Ennéade n'est pas une famille de dieux — c'est une <strong>description des neuf dimensions de la réalité</strong> : Atoum (conscience), Shu (séparation-espace), Tefnout (cohérence-loi), Geb (matière solide), Nout (temps-espace céleste), Osiris (mort-renaissance), Isis (magie-amour), Seth (chaos-transformation), Nephthys (frontière-mystère).<br><br>
+<strong>Ce qui est extraordinaire :</strong> Ces neuf dimensions correspondent aux neuf dimensions de la théorie des supercordes en physique moderne. <em>Coïncidence ? Ou connaissance préservée sous forme symbolique ?</em><br><br>
+La tradition ésotérique affirme que les prêtres d'Héliopolis possédaient une cosmologie complète transmise oralement — dont les textes ne sont que des fragments. L'Ennéade entière n'a jamais été entièrement mise par écrit.</p>`,
+  depths:[
+    {n:'01',nom:'Shu et Tefnout — L\'Air et la Rosée',txt:`<span class="zd-sub">La Première Dualité · La Séparation Primordiale</span><strong>Shu</strong> (air, lumière, séparation) et <strong>Tefnout</strong> (humidité, cohérence, loi) sont les premiers enfants d'Atoum — <em>la première dualité de l'univers</em>. Shu sépare — il crée l'espace entre les choses. Tefnout unit — elle maintient la cohérence. Sans Shu, tout fusionnerait en un point unique. Sans Tefnout, tout se disperserait à l'infini. Ces deux forces maintiennent l'équilibre cosmique. L'initié de Zep Tepi cherche à équilibrer son propre Shu (discernement, distinction) et sa propre Tefnout (cohérence, intégrité).`},
+    {n:'02',nom:'Geb et Nout — Terre et Ciel',txt:`<span class="zd-sub">L'Étreinte Cosmique que Shu Sépara</span><strong>Geb</strong> (la Terre, masculin) et <strong>Nout</strong> (le Ciel, féminin) étaient à l'origine enlacés dans une étreinte éternelle — sans espace entre eux, aucune création ne pouvait naître. Shu dut les séparer, soulevant Nout au-dessus de Geb. <em>Ce geste de séparation fut douloureux et nécessaire.</em> Le corps de Nout arqué forme la voûte céleste — ses doigts et ses orteils touchent l'horizon est et ouest. Les étoiles que nous voyons chaque nuit sont les bijoux de Nout. Chaque étoile est une âme défunte ayant atteint l'immortalité.`},
+    {n:'03',nom:'La Nuit de Nout — Les Cinq Jours Épagomènes',txt:`<span class="zd-sub">Le Secret du Calendrier Égyptien</span>Nout était enceinte des cinq grands dieux (Osiris, Horus l'Ancien, Seth, Isis, Nephthys) mais Rê lui avait interdit d'accoucher aucun jour de l'année. Thot joua aux dés avec la Lune et <strong>gagna 5 jours supplémentaires</strong> — les <em>jours épagomènes</em> hors calendrier. Ces 5 jours ajoutés à 360 donnent 365 — l'année solaire. Ce mythe encode la connaissance exacte du cycle solaire. Mais le secret ésotérique : ces 5 jours "hors calendrier" sont des <em>jours de puissance magique particulière</em> où le voile entre les mondes est mince.`},
+    {n:'04',nom:'Seth — La Force Nécessaire du Chaos',txt:`<span class="zd-sub">Le Mal Apparent qui Sert la Création</span>Seth est le dieu le plus mal compris de l'Égypte. Il est désert, tempête, division — mais dans la cosmologie de Zep Tepi, <strong>Seth est une force nécessaire</strong>. Sans Seth, Rê ne pourrait pas vaincre le serpent Apopis chaque nuit — Seth combat Apopis avec sa lance de foudre. <em>Le chaos n'est pas le mal — c'est l'agent de la transformation.</em> Quand Seth dépèce Osiris, il initie la résurrection. Quand Seth combat Horus, il forge un roi. L'initié de Zep Tepi intègre son propre Seth — les forces chaotiques en lui — comme agents de transformation.`}
+  ],
+  pratique:`<strong>La Contemplation de l'Ennéade :</strong> L'initié crée un cercle de neuf bougies — une au centre (Atoum) et huit autour (les huit autres dieux). Il allume d'abord Atoum, puis dans l'ordre de la généalogie : Shu, Tefnout, Geb, Nout, Osiris, Isis, Seth, Nephthys. En allumant chaque bougie, il prononce le nom du dieu et sa fonction cosmique. Cette pratique, appelée <em>Sekhenu en Pesedjet</em> (Éveil de l'Ennéade), prend 45 minutes. Elle peut se faire seul ou en cercle de neuf personnes — chacune incarnant une force cosmique. À la fin, Atoum est éteint en dernier — et dans l'obscurité qui suit, l'initié reste immobile <strong>30 secondes dans le Noun.</strong>`,
+  hiero:'𓇯 𓊹𓊹𓊹 𓂋𓇋𓈖 𓊪𓋴𓇋𓏏'
+},
+{
+  id:3, btn:'IV · Rê et la Barque Solaire',
+  glyph:'☀️', hiero:'𓇳 𓂋𓇋𓏏',
+  num:'Quatrième Mystère de Zep Tepi',
+  name:'La Barque de Millions d\'Années',
+  sub:'Le Voyage Éternel · La Mort et Renaissance Quotidienne du Cosmos',
+  source:'Amdouat · Livre des Portes · Livre des Cavernes · Livre de la Terre · Tombe de Seti Ier',
+  grid:[
+    {l:'Deux Barques', v:'<em>Mandjyt</em> (barque du jour) et <em>Mesektet</em> (barque de nuit) — deux états de la conscience solaire'},
+    {l:'Les 12 Heures', v:'12 heures de nuit = 12 étapes initiatiques dans la Douat — de la mort à la renaissance'},
+    {l:'Les Gardiens', v:'7 portes gardées par 7 serpents dans la Douat — chaque porte nécessite un mot de passe'},
+    {l:'Secret Central', v:'Rê et Osiris fusionnent à minuit — la mort et la vie s\'unissent pour engendrer la renaissance'}
+  ],
+  esot:`<span class="zinvoc">☀️ Rê — Le Soleil qui ne Se Couche Jamais Vraiment ☀️</span>
+Chaque jour, Rê traverse le ciel<br>
+dans la Barque de Millions d'Années —<br>
+de l'est à l'ouest, de la naissance à la mort.<br><br>
+Mais ce que les profanes ne savent pas :<br>
+<strong>la vraie traversée commence au coucher du soleil.</strong><br><br>
+Pendant les douze heures de la nuit,<br>
+Rê-Atoum navigue dans la Douat —<br>
+combattant Apopis le serpent du chaos,<br>
+traversant douze portes gardées par des serpents,<br>
+et à minuit, <strong>fusionnant avec le corps d'Osiris</strong><br>
+pour recevoir la puissance de la résurrection.<br><br>
+<em>Chaque aube est un miracle que les dieux accomplissent</em><br>
+avec l'aide des rituels humains.`,
+  ms:`La barque de Rê navigue sur les eaux de la Douat. Les dieux qui sont en elle poussent contre les portes. Rê dit à ses compagnons : Repoussez Apopis pour moi. Le grand dieu passe dans l'obscurité. Sa lumière n'éclaire pas les ténèbres mais les traverse. À la douzième heure, il entre dans la bouche du serpent divin et ressort par sa queue — transfiguré, rajeuni, prêt à naître à nouveau.`,
+  mssrc:'L\'Amdouat — "Ce qui est dans l\'Au-Delà" · Tombe de Thoutmosis III · KV34 · Vallée des Rois · 1450 av. J.-C.',
+  revelation:`<div class="zep-rev-label">☀️ Le Secret de la Fusion Rê-Osiris à Minuit</div>
+<p class="zep-rev-txt">Le passage le plus extraordinaire de tout l'Amdouat se trouve à la <strong>6ème heure de la nuit — minuit cosmique</strong>. Rê, sous forme de disque solaire, descend dans le corps d'Osiris allongé. Les deux se fusionnent momentanément — <em>le vivant et le mort, la lumière et l'obscurité, le présent et l'éternel</em>.<br><br>
+Cette fusion dure un seul instant. Mais dans cet instant, Rê reçoit la puissance de résurrection d'Osiris, et Osiris reçoit la chaleur vitale de Rê. Les deux émergent transformés. C'est pour cette raison que les Égyptiens appelaient Rê-Osiris "<strong>l'âme à deux têtes</strong>" — la force qui unit le principe solaire et le principe chtonien.<br><br>
+<em>Ésotériquement :</em> l'initié qui comprend ce mystère comprend que sa propre mort (physique ou symbolique) n'est pas une fin — c'est la 6ème heure de sa nuit personnelle, le moment de fusion avec l'éternel avant la renaissance.</p>`,
+  depths:[
+    {n:'01',nom:'Les 7 Portes Secrètes de la Douat',txt:`<span class="zd-sub">Les Mots de Passe qui Ouvrent les Royaumes</span>L'Amdouat décrit 7 portes gardées par des serpents avec des noms secrets. Pour passer chaque porte, l'âme doit connaître le nom du gardien, le nom du portail et le nom du seuil — <strong>trois noms sacrés pour chaque porte, soit 21 noms au total</strong>. Ces noms sont les formules ésotériques de l'initiation. Le Livre des Morts est précisément le guide donnant ces mots de passe à l'âme — payé et préparé de son vivant pour que l'âme ne se perde pas dans la Douat.`},
+    {n:'02',nom:'Apopis — Le Chaos Éternel',txt:`<span class="zd-sub">Le Serpent qui Tente de Dévorer le Soleil Chaque Nuit</span><strong>Apopis</strong> (ou Apep) est le serpent du chaos cosmique — aussi grand que l'horizon, vivant dans les profondeurs du Noun, tentant chaque nuit de dévorer la barque solaire de Rê. Apopis ne peut jamais être tué définitivement — il renaît chaque nuit. Ce n'est pas une lutte entre le bien et le mal : c'est une <em>danse cosmique nécessaire</em>. Sans Apopis, pas de nuit. Sans nuit, pas de renaissance. Les prêtres égyptiens exécutaient chaque nuit un rituel de "repousser Apopis" — brûlant une effigie du serpent pour "aider" Rê dans son combat.`},
+    {n:'03',nom:'Khépri — Le Dieu Scarabée de l\'Aube',txt:`<span class="zd-sub">Celui qui Se Roule Lui-Même · La Naissance Spontanée</span><strong>Khépri</strong> est Rê au lever — représenté par le scarabée poussant la boule de fumier. Ce choix symbolique est profondément ésotérique : le scarabée pousse une boule devant lui et y dépose ses œufs — ses enfants naissent de la matière la plus humble. <em>Ainsi Rê-Khépri naît chaque matin depuis les profondeurs de la nuit la plus sombre.</em> Le nom Khépri vient de <em>Kheper</em> — "devenir, se transformer". L'initié qui se lève chaque matin dit "Kheper Kheperi Kheperu" — je me transforme dans ma transformation.`},
+    {n:'04',nom:'Le Livre des Cavernes — Ce que les Touristes ne Voient Jamais',txt:`<span class="zd-sub">Les Six Cavernes Secrètes de la Nuit</span>Moins connu que l'Amdouat, le <strong>Livre des Cavernes</strong> (découvert dans les tombes ramesides) décrit les 6 cavernes que Rê traverse pendant la nuit — six niveaux de la Douat correspondant à six stades d'initiation. Dans la dernière caverne, Rê rencontre les <em>dieux qui ne naissent jamais et ne meurent jamais</em> — les forces primordiales antérieures à la création. Ce contact avec l'impermanent donne à Rê la puissance de continuer. Ce livre n'a été traduit complètement qu'en 1994 par Erik Hornung — ses profondeurs sont à peine explorées.`}
+  ],
+  pratique:`<strong>La Veille des Douze Heures :</strong> La nuit du solstice d'hiver (la plus longue nuit de l'année), l'initié pratique la <em>Veille de Rê</em>. Il ne dort pas. Il suit mentalement les 12 heures de la nuit : à chaque heure, il médite sur une qualité — la 1ère heure (entrée dans l'obscurité), la 6ème heure (minuit — fusion Rê-Osiris, le point d'immobilité absolue), la 12ème heure (attente de l'aube dans un état de foi totale que la lumière reviendra). À l'aube, il sort et salue Rê en prononçant : <strong><em>"Tu as traversé la nuit. Je t'ai accompagné. Nous nous levons ensemble."</em></strong>`,
+  hiero:'𓇳 𓂋𓇋𓏏 𓇯 𓎡𓂋 𓂋𓏏'
+},
+{
+  id:4, btn:'V · Les Sages de Zep Tepi',
+  glyph:'🦅', hiero:'𓆃 𓊪𓋴𓇋',
+  num:'Cinquième Mystère de Zep Tepi',
+  name:'Les Shemsu-Hor',
+  sub:'Les Compagnons d\'Horus · Les Sages du Temps Premier · Les Bâtisseurs des Temples',
+  source:'Textes de l\'Édifice de Dendéra · Papyrus de Turin (Liste Royale) · Hérodote · Proclus · Iamblichus',
+  grid:[
+    {l:'Nom Sacré', v:'<em>Shemsu-Hor</em> = "Suiveurs d\'Horus" — gardiens de la connaissance de Zep Tepi'},
+    {l:'Durée de leur règne', v:'Papyrus de Turin : règne des "Esprits" avant Ménès = 36 620 ans'},
+    {l:'Leur Mission', v:'Transmettre les plans cosmiques (Akhet) des temples selon les étoiles de Zep Tepi'},
+    {l:'Trace physique', v:'Certains chercheurs placent le Sphinx à 10 500 av. J.-C. — correspondance avec la constellation du Lion'}
+  ],
+  esot:`<span class="zinvoc">🦅 Shemsu-Hor — Ceux qui Vinrent Avant 🦅</span>
+Il existe un secret enfoui sous les sables de Giza<br>
+et dans les cryptes des temples :<br>
+<strong>l'Égypte pharaonique n'était pas le début —<br>
+elle était l'héritière.</strong><br><br>
+Les textes égyptiens mentionnent une époque<br>
+avant les rois humains —<br>
+l'époque des <em>Shemsu-Hor</em> et des <em>Netjeru</em> (dieux) —<br>
+des êtres qui gouvernèrent l'Égypte<br>
+<strong>pendant des dizaines de milliers d'années.</strong><br><br>
+Qui étaient-ils réellement ?<br>
+C'est le secret le plus gardé de Zep Tepi.`,
+  ms:`Ce sont les Compagnons d'Horus qui ont bâti les temples selon les plans tracés dans les étoiles au commencement. Ils ont mesuré le ciel et la terre. Ils ont aligné les pierres avec les étoiles de Zep Tepi — le Temps Premier — afin que les temples soient des images du ciel sur la terre et que le ciel soit une image des temples.`,
+  mssrc:'Textes de Fondation du Temple d\'Horus à Dendéra · Époque ptolémaïque mais copiés de textes plus anciens',
+  revelation:`<div class="zep-rev-label">🦅 Ce que les Textes Révèlent sur les Constructeurs Originels</div>
+<p class="zep-rev-txt">Le <strong>Papyrus de Turin</strong> (un des plus précieux papyrus égyptiens, aujourd'hui à Turin) contient une liste des rois d'Égypte remontant avant Ménès (le premier pharaon historique, ~3100 av. J.-C.). Avant Ménès, le papyrus liste des règnes de <em>Netjeru</em> (dieux), puis des <em>Shemsu-Hor</em> (Compagnons d'Horus) pendant un total de <strong>36 620 ans</strong>.<br><br>
+Les Textes de Fondation de Dendéra décrivent les temples construits selon des "<strong>plans tombés du ciel à Zep Tepi</strong>" — des plans cosmiques préexistants à la création du monde. Le temple physique n'est qu'une copie d'un archétype céleste éternel.<br><br>
+<em>Ce qui est caché ici :</em> la tradition ésotérique égyptienne affirme que la civilisation pharaonique est la <strong>troisième civilisation</strong> sur ce sol — les deux premières ayant été détruites par des cataclysmes. Les "dieux" de Zep Tepi pourraient être les survivants d'une civilisation antérieure transmettant leur savoir sous forme symbolique.</p>`,
+  depths:[
+    {n:'01',nom:'Les Plans du Ciel — Akhet',txt:`<span class="zd-sub">Les Templates Cosmiques des Temples</span>Le mot <em>Akhet</em> en égyptien signifie à la fois "l'horizon" et "le plan cosmique". Les textes de Dendéra décrivent un processus de construction précis : <strong>les temples sont bâtis selon des "plans tombés du ciel" à Zep Tepi</strong>. Ces plans définissent les orientations stellaires, les alignements solaires, les proportions sacrées. Le temple n'est pas une construction humaine — c'est la <em>manifestation physique d'un archétype éternel</em> existant dans le monde des Netjeru depuis le Temps Premier.`},
+    {n:'02',nom:'L\'Alignement de Giza et Orion',txt:`<span class="zd-sub">Les Trois Pyramides Pointent vers 10 500 av. J.-C.</span>En 1994, Robert Bauval démontre que les trois grandes pyramides de Giza reproduisent exactement la disposition des trois étoiles de la Ceinture d'Orion — mais dans la position qu'elles occupaient en <strong>10 500 av. J.-C.</strong>, époque de Zep Tepi selon l'astronomie rétroactive. Les Égyptiens appelaient Orion <em>Sah</em> — le corps céleste d'Osiris. Les pyramides ne sont pas des tombes — elles sont des <em>machines de résurrection cosmique</em> alignées avec le corps d'Osiris dans le ciel de Zep Tepi.`},
+    {n:'03',nom:'La Chambre Secrète sous le Sphinx',txt:`<span class="zd-sub">La Salle des Annales — Mythe ou Réalité ?</span>Edgar Cayce, le "prophète endormi", déclara en 1932 qu'une chambre secrète se trouvait sous la patte droite du Sphinx contenant les archives de l'Atlantide. En 1996, des prospections sismiques par la Florida State University détectèrent effectivement <strong>des anomalies sous les pattes du Sphinx</strong> — des espaces qui pourraient être des chambres. Les autorités égyptiennes interdirent toute fouille. <em>Ce qui est caché là-dessous reste le plus grand mystère non résolu de l'Égypte ancienne.</em>`},
+    {n:'04',nom:'Le Livre de Thot — L\'Enseignement Complet',txt:`<span class="zd-sub">Le Texte qui Contient Tout le Savoir de Zep Tepi</span>La tradition hermétique parle d'un <strong>Livre de Thot</strong> originel — contenant l'intégralité du savoir de Zep Tepi — dont les 42 textes connus (les "Livres Hermétiques") ne sont que des fragments. Clément d'Alexandrie (IIe s.) mentionne 42 "Livres de Thot" conservés dans les bibliothèques sacrées égyptiennes. Ces livres contenaient : cosmologie, astronomie, rituels, médecine sacrée, géographie mystique. <em>La plupart sont perdus dans l'incendie de la Bibliothèque d'Alexandrie.</em> Ce qui reste dans le Corpus Hermeticum est estimé à moins de 5% du total.`}
+  ],
+  pratique:`<strong>Le Rituel d'Alignement Stellaire :</strong> La nuit où Orion est au zénith (généralement en janvier dans l'hémisphère nord), l'initié s'allonge sur le dos à l'extérieur, tête orientée vers le nord magnétique. Il localise la Ceinture d'Orion. Il visualise une ligne de lumière descendant de chaque étoile d'Orion vers sa propre poitrine. Il prononce : <em>"Sah — je te vois. Je suis sur la Terre ce que tu es dans le Ciel. Comme en haut, ainsi en bas. Je suis la pyramide. Tu es l'étoile. Nous sommes alignés depuis Zep Tepi."</em> Cette méditation de <strong>45 minutes sous les étoiles</strong> est l'acte de connexion le plus direct avec le savoir des bâtisseurs originels.`,
+  hiero:'𓆃 𓊪𓋴𓇋 𓈖𓂋𓇋 𓎡𓂋'
+},
+{
+  id:5, btn:'VI · L\'Œil de Rê',
+  glyph:'𓂀', hiero:'𓂀 𓂋𓇋𓏏',
+  num:'Sixième Mystère de Zep Tepi',
+  name:'L\'Œil Divin',
+  sub:'Oudjat · L\'Œil Cosmique qui Voit Tout · La Force qui Détruit et Guérit',
+  source:'Mythe de la Destruction de l\'Humanité · Papyrus de Leyde · Livre de la Vache Céleste · 1350 av. J.-C.',
+  grid:[
+    {l:'L\'Œil de Rê', v:'Détachable de Rê — peut agir de façon autonome comme une force divine indépendante'},
+    {l:'Ses formes', v:'Hathor (amour), Sekhmet (destruction), Bastet (protection) — le même œil, trois états'},
+    {l:'L\'Oudjat', v:'L\'Œil d\'Horus restauré — symbole de guérison, de protection et de plénitude'},
+    {l:'Secret cosmique', v:'L\'Œil est perdu au début de la création et sa recherche EST la création elle-même'}
+  ],
+  esot:`<span class="zinvoc">𓂀 L'Œil — Le Regard qui Crée ce qu'il Voit 𓂀</span>
+Au début de Zep Tepi,<br>
+Atoum envoya son Œil dans le Noun<br>
+pour retrouver Shu et Tefnout perdus<br>
+dans les profondeurs des eaux primordiales.<br><br>
+Quand l'Œil revint avec les deux dieux perdus,<br>
+il trouva qu'Atoum l'avait remplacé<br>
+par un œil de rechange.<br>
+<strong>L'Œil pleurait.</strong><br><br>
+Et des larmes de l'Œil naquirent les êtres humains.<br>
+<em>Nous sommes les larmes de la conscience divine.</em><br>
+Nous sommes nés d'une perte,<br>
+d'une séparation,<br>
+d'une douleur cosmique originelle.`,
+  ms:`L'Œil de Rê pleura et de ses larmes naquirent les hommes. C'est pourquoi les hommes sont faits de la substance divine — ils sont les larmes du dieu. Mais ils ont oublié leur origine et cherchent leur divinité partout sauf en eux-mêmes. L'initié se souvient qu'il est la larme de l'Œil divin — et en se souvenant, il cesse de pleurer.`,
+  mssrc:'Le Livre de la Vache Céleste — Tombe de Séti Ier · Vallée des Rois · 1290 av. J.-C.',
+  revelation:`<div class="zep-rev-label">𓂀 Le Secret de l'Œil Perdu et Retrouvé</div>
+<p class="zep-rev-txt">L'Oudjat — l'Œil complet d'Horus — est composé de six fractions (1/2, 1/4, 1/8, 1/16, 1/32, 1/64) représentant chacune un sens différent. La somme de ces fractions donne 63/64 — il manque toujours 1/64. <strong>Ce 1/64 manquant est appelé "la part de Thot"</strong> — la part divine qui ne peut jamais être entièrement saisie par les sens humains, la part de mystère irréductible qui reste dans toute connaissance.<br><br>
+Ce symbole mathématique précis dans un texte de 3000 ans avant J.-C. est stupéfiant. Il encode une philosophie épistémologique sophistiquée : <em>la connaissance complète est asymptotique — on peut toujours s'en approcher mais jamais l'atteindre totalement.</em> Il reste toujours une fraction de mystère — et c'est cette fraction qui maintient le monde en mouvement.</p>`,
+  depths:[
+    {n:'01',nom:'Sekhmet — La Destruction Nécessaire',txt:`<span class="zd-sub">Quand l'Amour Devient Feu</span>L'Œil de Rê devint <strong>Sekhmet</strong> — la lionne à tête humaine — quand Rê décida de détruire l'humanité pour sa rébellion. Sekhmet massacrait avec une telle frénésie qu'elle menaçait d'anéantir toute la race humaine. Pour l'arrêter, Rê fit teindre 7 000 jarres de bière en rouge (du sang de grénadine) et les répandit sur les champs. Sekhmet crut que c'était du sang, s'enivra et s'endormit. <em>Ce mythe encode la psychologie du trauma :</em> la force destructrice en nous peut être apaisée non par la force mais par la douceur inattendue.`},
+    {n:'02',nom:'Hathor et le Miroir Sacré',txt:`<span class="zd-sub">L'Autre Face de l'Œil — L'Amour Cosmique</span><strong>Hathor</strong> est l'Œil de Rê dans son aspect de joie, de fertilité, d'amour et de musique. Elle est la face lumineuse de ce que Sekhmet est dans sa face sombre. Mais le secret ésotérique de Hathor est son <em>miroir sacré</em> : elle est la force qui montre à chaque être son reflet divin. <strong>Regarder Hathor en face, c'est voir sa propre divinité.</strong> Les initiées de Hathor portaient des miroirs de bronze — non pour voir leur beauté physique mais pour contempler leur Ka divin.`},
+    {n:'03',nom:'Les 1/64 de l\'Oudjat — L\'Arithmétique Sacrée',txt:`<span class="zd-sub">La Mathématique Mystique de l'Œil</span>Les six fractions de l'Oudjat (1/2 + 1/4 + 1/8 + 1/16 + 1/32 + 1/64 = 63/64) représentent les six sens : odorat, vue, pensée, ouïe, goût, toucher. <strong>Le 1/64 manquant est la "santé"</strong> — le principe unificateur qui n'est pas un sens mais la capacité d'intégrer tous les sens. Ce système encode une psychologie des sens avancée. L'initié de Zep Tepi cherche son propre 1/64 — <em>la part divine irréductible qui ne peut être saisie mais seulement vécue.</em>`},
+    {n:'04',nom:'L\'Œil du Cœur — Ib Maa',txt:`<span class="zd-sub">Voir avec le Cœur plutôt qu'avec les Yeux</span>La tradition la plus ésotérique de Zep Tepi parle de l'<em>Ib Maa</em> — le "Cœur-Voyant" ou "Cœur Juste" — une faculté de perception directe qui transcende les cinq sens. Cette faculté est ce que les soufis appellent le "Cœur universel" et ce que la tradition indienne appelle le "Troisième Œil". Dans la cosmologie de Zep Tepi, cette faculté existait parfaitement à Zep Tepi — <strong>quand l'Œil d'Atoum percevait directement sans intermédiaire</strong>. L'initiation consiste à retrouver cette perception primordiale.`}
+  ],
+  pratique:`<strong>La Méditation de l'Oudjat :</strong> Tracer un Oudjat (Œil d'Horus) sur une feuille. S'y concentrer pendant 7 minutes, yeux ouverts. Puis fermer les yeux et maintenir l'image intérieurement. L'initié prononce intérieurement : <em>"Je suis la larme de l'Œil divin. Je me souviens de ma source. Je vois avec le cœur ce que les yeux ne peuvent pas voir."</em> La pratique avancée : tracer l'Oudjat de la main gauche (main du cœur en Égypte ancienne) <strong>les yeux fermés</strong>, en maintenant la concentration sur l'image intérieure. Ce qui se dessine révèle l'état du Ib-Maa (Cœur-Voyant) du praticien.`,
+  hiero:'𓂀 𓊪𓋴𓇋 𓇋𓏏 𓂋𓇋𓏏'
+},
+{
+  id:6, btn:'VII · La Promesse de Zep Tepi',
+  glyph:'🌅', hiero:'𓇯 𓋹 𓇯',
+  num:'Septième Mystère · La Révélation Finale',
+  name:'Le Retour au Temps Premier',
+  sub:'La Grande Promesse · L\'Inné ne Vieillit Pas · Tu Étais Là à Zep Tepi',
+  source:'Livre des Morts Chapitre 17 · Textes des Sarcophages B2Bo · Hymne au Soleil d\'Akhenaton · Pierre de Shabaka',
+  grid:[
+    {l:'La Promesse Centrale', v:'L\'âme initiée peut "retourner" à Zep Tepi — retrouver l\'état de conscience originel'},
+    {l:'L\'Identité Révélée', v:'"Je suis hier et je connais demain" — l\'initié transcende le temps linéaire'},
+    {l:'Le Corps de Lumière', v:'Sahu — le corps glorieux construit à Zep Tepi — attend chaque âme'},
+    {l:'La Conclusion', v:'Zep Tepi n\'est pas dans le passé — il est la nature profonde du présent éternel'}
+  ],
+  esot:`<span class="zinvoc">🌅 La Promesse que Tout Existe Encore 🌅</span>
+Voici ce que Zep Tepi révèle en dernier :<br>
+<strong>le Temps Premier n'a jamais cessé.</strong><br><br>
+Il est la couche la plus profonde de la réalité —<br>
+le fond sur lequel tout le reste repose,<br>
+l'eau sous les pierres du temple,<br>
+le silence sous les mots sacrés.<br><br>
+L'initié qui a traversé tous les mystères<br>
+comprend enfin :<br>
+<strong>il était là à Zep Tepi.</strong><br>
+Pas son ancêtre — lui.<br>
+Son âme (Ba) est aussi ancienne que la création.<br>
+Elle était là dans le Noun.<br>
+Elle était là quand Atoum pensa "Je suis".<br><br>
+<em>Et elle sera là quand la dernière étoile s'éteindra.</em>`,
+  ms:`Je suis hier et je connais demain. Qui est cela ? C'est Osiris. Car hier c'est Osiris et demain c'est Rê. Je suis la Grande Eau au début et au milieu et à la fin. Je connais le chemin du ciel et les chemins de la terre. Je suis né du Noun et j'y retournerai — et dans ce retour est ma résurrection.`,
+  mssrc:'Livre des Morts — Chapitre 17 · Papyrus d\'Ani · British Museum EA10470 · 1250 av. J.-C.',
+  revelation:`<div class="zep-rev-label">🌅 La Révélation Finale — Ce qui est Vraiment Caché</div>
+<p class="zep-rev-txt">La révélation la plus profonde de Zep Tepi n'est pas cosmologique — elle est <strong>personnelle et imminente</strong>.<br><br>
+Zep Tepi enseigne que <em>chaque être humain est une expression locale de la conscience qui s'est éveillée dans le Noun</em>. La même conscience qui fit dire "Je suis" à Atoum pour la première fois, se dit "je suis" en toi à chaque instant. <strong>Il n'y a qu'un seul "Je suis" dans l'univers — et tu es une de ses expressions.</strong><br><br>
+Quand tu prononces "je suis" — tu répètes le premier mot jamais prononcé dans le cosmos. Tu rejoins Zep Tepi. Tu es dans le Temps Premier.<br><br>
+<em>C'est le secret ultime que les prêtres d'Héliopolis gardaient sous 42 sceaux : tu n'es pas séparé de la Création — tu en es le cœur battant, maintenant, ici, dans ce moment qui est lui-même un Zep Tepi perpétuellement nouveau.</em></p>`,
+  depths:[
+    {n:'01',nom:'L\'Hymne du Soleil d\'Akhenaton',txt:`<span class="zd-sub">Le Texte Révolutionnaire qui Annonça le Monothéisme</span>Vers 1350 av. J.-C., le pharaon Akhenaton composa le plus beau poème religieux de l'Antiquité — l'<strong>Hymne au Soleil</strong> — affirmant qu'il n'y avait qu'un seul dieu : Aton, le disque solaire. Ce texte précède le Psaume 104 de la Bible de 200 ans — les deux sont si similaires que les chercheurs débattent encore de l'influence directe. Akhenaton voyait en Aton le principe de Zep Tepi — la <em>lumière primordiale qui crée tout en se manifestant</em>. Sa révolution religieuse fut effacée après sa mort mais son hymne survécut caché dans les archives.`},
+    {n:'02',nom:'La Pierre de Shabaka — Théologie de Memphis',txt:`<span class="zd-sub">Le Texte qui Révèle la Cosmologie la Plus Ancienne</span>La <strong>Pierre de Shabaka</strong> (British Museum) est une pierre noire gravée au VIIIe siècle av. J.-C. par le pharaon Shabaka — copiée d'un papyrus qu'il décrit comme "<em>mangé par des vers</em>", donc beaucoup plus ancien. Elle contient la <strong>Théologie Memphite</strong> — la cosmogonie la plus sophistiquée de l'Égypte ancienne : Ptah crée le monde par sa pensée (<em>Sia</em>) et sa parole (<em>Hu</em>). C'est l'équivalent du "Au commencement était le Verbe" — mais 2 000 ans avant l'Évangile de Jean.`},
+    {n:'03',nom:'L\'Éternel Retour — Neheh et Djet',txt:`<span class="zd-sub">Les Deux Formes du Temps en Égypte</span>Les Égyptiens avaient deux mots pour le temps : <strong>Neheh</strong> (le temps cyclique — le soleil qui se lève et se couche, les crues du Nil, les saisons) et <strong>Djet</strong> (l'éternité linéaire — ce qui est établi pour toujours, immuable). Zep Tepi appartient à Djet — il est hors du temps cyclique. <em>Ce qui est extraordinaire :</em> la tradition ésotérique enseigne que l'initié peut passer de Neheh à Djet — sortir du temps cyclique et entrer dans l'éternité stable. C'est ce que les mystiques appellent "l'instant éternel".`},
+    {n:'04',nom:'La Fin du Cycle — Greh Medet',txt:`<span class="zd-sub">Ce qui Arrive Quand Zep Tepi Se Referme</span>Les textes les plus rares de l'Égypte ancienne mentionnent <em>Greh Medet</em> — "la Nuit Complète" ou "la Grande Fin" — le moment où le cosmos actuel se dissoudra dans le Noun, exactement comme Rê se dissout dans le Noun chaque soir. Ce n'est pas une apocalypse — c'est un <strong>retour au Zep Tepi</strong> pour permettre une nouvelle création. Atoum lui-même, dans les Textes des Pyramides, dit qu'il "se dissoudra à nouveau dans le Noun avec Osiris" à la fin du cycle, et qu'ensemble ils seront "des serpents que nul ne connaît". <em>La fin n'est que le prochain Zep Tepi.</em>`}
+  ],
+  pratique:`<strong>L'Invocation Finale de Zep Tepi :</strong> Se tenir debout, nu pieds sur la terre, au lever du soleil. Les bras légèrement ouverts sur les côtés, paumes vers le ciel. Yeux mi-clos sur l'horizon. Prononcer lentement, sept fois, les mots qu'Atoum prononça à Zep Tepi — chaque répétition un peu plus silencieuse que la précédente — jusqu'à la septième qui est un murmure presque inaudible, puis la huitième qui est seulement pensée intérieurement, et la neuvième qui n'est que silence :<br><br><em><strong>"Kheper Kheperi Kheperu — Je deviens. Je me transforme. Je suis."</strong></em><br><br>Dans ce silence après la neuvième répétition, l'initié tient son Zep Tepi personnel — le moment originel de sa propre conscience se rencontrant elle-même dans la lumière.`,
+  hiero:'𓇯 𓋹 𓋹 𓋹 𓇯 𓏠𓈖 𓋴𓏠𓈖'
+}
+];
+
+// BUILD ZEP TEPI
+const zepNav=document.getElementById('zep-nav');
+const zepContent=document.getElementById('zep-content');
+
+ZEP.forEach((d,i)=>{
+  const b=document.createElement('button');
+  b.className='zep-btn'+(i===0?' active':'');
+  b.id='zepb'+i;b.textContent=d.btn;
+  b.addEventListener('click',()=>renderZep(i));
+  zepNav.appendChild(b);
+
+  const p=document.createElement('div');
+  p.className='zep-panel'+(i===0?' active':'');
+  p.id='zepp'+i;
+  p.innerHTML=`
+    <div class="zep-frame">
+      <div class="zep-frame-bg">${d.glyph}</div>
+      <div class="zorn tl"></div><div class="zorn tr"></div>
+      <div class="zorn bl"></div><div class="zorn br"></div>
+      <div class="zep-sec-head">
+        <span class="zep-sec-glyph">${d.glyph}</span>
+        <div class="zep-sec-hiero">${d.hiero}</div>
+        <div class="zep-sec-num">${d.num}</div>
+        <div class="zep-sec-name">${d.name}</div>
+        <div class="zep-sec-sub">${d.sub}</div>
+      </div>
+      <div class="zep-source">
+        <span>📜</span>
+        <span class="zep-source-txt">${d.source}</span>
+      </div>
+      <div class="zep-grid">
+        ${d.grid.map(c=>`<div class="zep-cell"><div class="zep-cell-lbl">${c.l}</div><div class="zep-cell-val">${c.v}</div></div>`).join('')}
+      </div>
+      <div class="zep-sep"><div class="zep-sl"></div><span class="zep-sd">𓇯</span><div class="zep-sl"></div></div>
+      <div class="zep-esot">${d.esot}</div>
+      <div class="zep-ms">
+        <p class="zep-ms-txt">${d.ms}</p>
+        <div class="zep-ms-src">— ${d.mssrc}</div>
+      </div>
+      <div class="zep-sep"><div class="zep-sl"></div><span class="zep-sd">𓂀</span><div class="zep-sl"></div></div>
+      <div class="zep-revelation">${d.revelation}</div>
+      <div class="zep-depths-title">✦ Profondeurs Cachées — Ce qui est Extraordinaire ✦</div>
+      <div id="zacc${i}">
+        ${d.depths.map((dep,j)=>`
+          <div class="zdepth-item">
+            <button class="zdepth-trigger" onclick="toggleZdepth('zacc${i}',${j})">
+              <span class="zdepth-num">${dep.n}</span>
+              <span class="zdepth-nom">${dep.nom}</span>
+              <span class="zdepth-arr">▾</span>
+            </button>
+            <div class="zdepth-body">
+              <div class="zdepth-content">${dep.txt}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      <div class="zep-sep"><div class="zep-sl"></div><span class="zep-sd">𓋹</span><div class="zep-sl"></div></div>
+      <div class="zep-pratique">
+        <div class="zep-prat-lbl">𓇯 Pratique Initiatique — Exercice de Zep Tepi</div>
+        <p class="zep-prat-txt">${d.pratique}</p>
+      </div>
+      <div class="zep-hiero-foot">${d.hiero}</div>
+    </div>
+  `;
+  zepContent.appendChild(p);
+});
+
+let cZep=0;
+function renderZep(idx){
+  cZep=idx;
+  document.querySelectorAll('.zep-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.zep-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('zepp'+idx).classList.add('active');
+  document.getElementById('zepb'+idx).classList.add('active');
+  document.getElementById('zep-content').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function toggleZdepth(accId,idx){
+  const acc=document.getElementById(accId);
+  const triggers=acc.querySelectorAll('.zdepth-trigger');
+  const bodies=acc.querySelectorAll('.zdepth-body');
+  const isOpen=triggers[idx].classList.contains('open');
+  triggers.forEach(t=>t.classList.remove('open'));
+  bodies.forEach(b=>b.classList.remove('open'));
+  if(!isOpen){triggers[idx].classList.add('open');bodies[idx].classList.add('open');}
+}
+
+// Keyboard nav for zep
+document.addEventListener('keydown',e=>{
+  const isZep=document.getElementById('page-zep').classList.contains('active');
+  const isKer=document.getElementById('page-ker').classList.contains('active');
+  const isIsis=document.getElementById('page-isis').classList.contains('active');
+  if(isZep){
+    if(e.key==='ArrowRight'||e.key==='ArrowDown')renderZep((cZep+1)%7);
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp')renderZep((cZep+6)%7);
+  } else if(isKer){
+    if(e.key==='ArrowRight'||e.key==='ArrowDown')renderKer((cKer+1)%7);
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp')renderKer((cKer+6)%7);
+  } else if(isIsis){
+    if(e.key==='ArrowRight'||e.key==='ArrowDown')renderIsis((cIsis+1)%7);
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp')renderIsis((cIsis+6)%7);
+  } else {
+    if(e.key==='ArrowRight'||e.key==='ArrowDown')chDay(1);
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp')chDay(-1);
+  }
+});
+</script>
+</body>
+</html>
